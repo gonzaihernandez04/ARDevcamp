@@ -10,6 +10,7 @@ class AuthController {
     public static function login(Router $router) {
 
         $alertas = [];
+        $usuario = new Usuario;
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
     
@@ -46,7 +47,8 @@ class AuthController {
         // Render a la vista 
         $router->render('auth/login', [
             'titulo' => 'Iniciar Sesión',
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            'usuario'=>$usuario
         ]);
     }
 
@@ -93,9 +95,9 @@ class AuthController {
                     $email->enviarConfirmacion();
                     
 
-                    if($resultado) {
-                        header('Location: /mensaje');
-                    }
+                     if($resultado) {
+                         header('Location: /mensaje');
+                     }
                 }
             }
         }
@@ -233,7 +235,7 @@ class AuthController {
             // Guardar en la BD
             $usuario->guardar();
 
-            Usuario::setAlerta('exito', 'Cuenta Comprobada Correctamente');
+            Usuario::setAlerta('exito', 'Cuenta Confirmada Correctamente');
         }
 
      

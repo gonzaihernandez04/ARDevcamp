@@ -1,25 +1,25 @@
 <?php include_once __DIR__ . '/../templates/header.php';?>
-
+<?php require_once __DIR__ . '/../templates/alertas.php';?>
 <div class="contenedor">
     <main class="auth">
         <h2 class="auth__heading text-center nombre-pagina"><?php include_once __DIR__ . '/../templates/nombre-pagina.php';?></h2>
         <p class="auth__texto text-center">Registrate en ARDevcamp</p>
 
-        <form class="formulario" method="POST">
+        <form class="formulario" action="/registro" method="POST">
 
             <div class="formulario__campo">
                 <label for="nombre" class="formulario__label">Nombre</label>
-                <input type="text" name="nombre" id="" class="formulario__input" placeholder="Ej: John">
+                <input type="text" name="nombre" id="" class="formulario__input" placeholder="Ej: John" value="<?php echo $usuario->nombre;?>">
             </div>
 
             <div class="formulario__campo">
                 <label for="apellido" class="formulario__label">Apellido</label>
-                <input type="text" name="apellido" id="" class="formulario__input" placeholder="Ej: Doe">
+                <input type="text" name="apellido" id="" class="formulario__input" placeholder="Ej: Doe" value="<?php echo $usuario->apellido;?>">
             </div>
 
             <div class="formulario__campo">
                 <label for="email" class="formulario__label">Email</label>
-                <input type="email" name="email" id="email" class="formulario__input" placeholder="email@email.com">
+                <input type="email" name="email" id="email" class="formulario__input" placeholder="email@email.com" value="<?php echo $usuario->email;?>">
             </div>
 
             <div class="formulario__campo">
@@ -32,7 +32,7 @@
                 <input type="password" name="pass2" id="pass2" class="formulario__input" placeholder="Repetir contraseña">
             </div>
 
-            <input type="submit" value="Iniciar sesion"  class="formulario__submit">
+            <input type="submit" value="Registrar cuenta"  class="formulario__submit">
         </form>
         <div class="acciones">
             <a href="/login" class="acciones__enlace">¿Tienes una cuenta? Inicia sesión</a>

@@ -13,13 +13,13 @@ class Email {
     
     public function __construct($email, $nombre, $token)
     {
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
-        $mail->SMTPAuth = true;
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER'];
-        $mail->Password = $_ENV['EMAIL_PASS'];
+        $this->mail = new PHPMailer();
+        $this->mail->isSMTP();
+        $this->mail->Host = $_ENV['EMAIL_HOST'];
+       $this->mail->SMTPAuth = true;
+        $this->mail->Port = $_ENV['EMAIL_PORT'];
+        $this->mail->Username = $_ENV['EMAIL_USER'];
+        $this->mail->Password = $_ENV['EMAIL_PASS'];
         $this->email = $email;
         $this->nombre = $nombre;
         $this->token = $token;
@@ -27,10 +27,7 @@ class Email {
 
     public function enviarConfirmacion() {
 
-         // create a new object
-       
 
-     
          $this->mail->setFrom('ardevcamp@gmail.com');
          $this->mail->addAddress($this->email, $this->nombre);
          $this->mail->Subject = 'Confirma tu Cuenta';
@@ -40,7 +37,7 @@ class Email {
          $this->mail->CharSet = 'UTF-8';
 
          $contenido = '<html>';
-         $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has Registrado Correctamente tu cuenta en DevWebCamp; pero es necesario confirmarla</p>";
+         $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has Registrado Correctamente tu cuenta en ArgDevCamp; pero es necesario confirmarla</p>";
          $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['HOST'] . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";       
          $contenido .= "<p>Si tu no creaste esta cuenta; puedes ignorar el mensaje</p>";
          $contenido .= '</html>';
@@ -53,16 +50,9 @@ class Email {
 
     public function enviarInstrucciones() {
 
-        // create a new object
-        $this->mail = new PHPMailer();
-        $this->mail->isSMTP();
-        $this->mail->Host = $_ENV['EMAIL_HOST'];
-        $this->mail->SMTPAuth = true;
-        $this->mail->Port = $_ENV['EMAIL_PORT'];
-        $this->mail->Username = $_ENV['EMAIL_USER'];
-        $this->mail->Password = $_ENV['EMAIL_PASS'];
+
     
-        $this->mail->setFrom('cuentas@devwebcamp.com');
+        $this->mail->setFrom('ardevcamp@gmail.com');
         $this->mail->addAddress($this->email, $this->nombre);
         $this->mail->Subject = 'Reestablece tu password';
 

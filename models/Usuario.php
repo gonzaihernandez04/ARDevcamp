@@ -14,7 +14,7 @@ class Usuario extends ActiveRecord {
     public $pass2;
     public $confirmado;
     public $token;
-    public $admin;
+    public $isAdmin;
 
     public $password_actual;
     public $password_nuevo;
@@ -26,11 +26,11 @@ class Usuario extends ActiveRecord {
         $this->nombre = $args['nombre'] ?? '';
         $this->apellido = $args['apellido'] ?? '';
         $this->email = $args['email'] ?? '';
-        $this->pass = $args['password'] ?? '';
-        $this->pass = $args['password2'] ?? '';
+        $this->pass = $args['pass'] ?? '';
+        $this->pass2 = $args['pass2'] ?? '';
         $this->confirmado = $args['confirmado'] ?? 0;
         $this->token = $args['token'] ?? '';
-        $this->admin = $args['admin'] ?? '';
+        $this->isAdmin = $args['isAdmin'] ?? '';
     }
 
     // Validar el Login de Usuarios
@@ -58,6 +58,10 @@ class Usuario extends ActiveRecord {
         }
         if(!$this->email) {
             self::$alertas['error'][] = 'El Email es Obligatorio';
+        }
+
+        if(!filter_var($this->email,FILTER_VALIDATE_EMAIL)) {
+            self::$alertas['error'][] = 'Debes escribir un mail';
         }
         if(!$this->pass) {
             self::$alertas['error'][] = 'El Password no puede ir vacio';
