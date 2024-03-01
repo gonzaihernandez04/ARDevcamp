@@ -31,7 +31,7 @@ class Email {
        
 
      
-         $this->mail->setFrom('cuentas@devwebcamp.com');
+         $this->mail->setFrom('ardevcamp@gmail.com');
          $this->mail->addAddress($this->email, $this->nombre);
          $this->mail->Subject = 'Confirma tu Cuenta';
 

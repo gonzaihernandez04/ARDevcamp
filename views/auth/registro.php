@@ -5,7 +5,7 @@
         <h2 class="auth__heading text-center nombre-pagina"><?php include_once __DIR__ . '/../templates/nombre-pagina.php';?></h2>
         <p class="auth__texto text-center">Registrate en ARDevcamp</p>
 
-        <form class="formulario">
+        <form class="formulario" method="POST">
 
             <div class="formulario__campo">
                 <label for="nombre" class="formulario__label">Nombre</label>

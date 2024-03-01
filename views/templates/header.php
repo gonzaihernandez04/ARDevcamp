@@ -12,7 +12,7 @@
 
             <div class="header__footer">
                 <div class="header__contenedor__texto">
-                    <p class="header__texto">| Octubre 5 - 6 / 2023 </p>
+                    <p class="header__texto">| Octubre 5 - 6 / 2024 </p>
                     <p class="header__texto header__texto--modalidad">| En Linea - Presencial</p>
                 </div>
 
@@ -30,8 +30,8 @@
 
 <div class="barra">
     <div class="barra__contenido">
-        <a href="">
-           <h2 class="barra__logo"> &#60;ARGDevCamp/></h2>
+        <a href="/">
+          <h2 class="barra__logo">&#60; ArgDevCamp/></h2>
         </a>
         <div class="navegacion">
             <a href="/argdevcamp" class="navegacion__enlace">Evento</a>

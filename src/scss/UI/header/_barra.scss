@@ -5,8 +5,9 @@
     background-color: v.$azul;
     &__contenido{
      
-        @include m.contenedor;
-        box-shadow:none;
+        @include m.contenedor-lg;
+        
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -17,8 +18,5 @@
             align-items: center
         }
     }
-    &__logo{
-        @include m.logo;
     
-    }
 }
