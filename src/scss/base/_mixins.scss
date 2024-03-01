@@ -68,9 +68,9 @@
 }
 
 @mixin contenedor(){
-    width: min(95%,115rem);
+    width: min(95%,125rem);
     padding: 5rem 2rem;
-    margin: 4rem auto 0 auto;
+    margin: 0rem auto 0 auto;
     @include boxShadow(v.$grisClaro);
 }
 
@@ -99,4 +99,15 @@
     font-weight: v.$bold;
     font-size: 5rem;
 
+}
+
+@mixin logo{
+    color: v.$blanco;
+    text-align: center;
+    margin-bottom: 2rem;
+    @include desktop{
+        text-align: left;
+        margin-bottom: 0;
+        margin: 0;
+    }
 }
