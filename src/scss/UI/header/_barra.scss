@@ -9,6 +9,8 @@
         box-shadow:none;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         @include m.desktop{
             flex-direction: row;
             justify-content: space-between;
