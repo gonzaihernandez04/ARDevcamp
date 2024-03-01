@@ -112,15 +112,13 @@ class AuthController {
 
     public static function olvide(Router $router) {
         $alertas = [];
-        
+        $usuario = new Usuario;
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $usuario = new Usuario($_POST);
+            $usuario->sincronizar($_POST);
             $alertas = $usuario->validarEmail();
-
             if(empty($alertas)) {
                 // Buscar el usuario
                 $usuario = Usuario::where('email', $usuario->email);
-
                 if($usuario && $usuario->confirmado) {
 
                     // Generar un nuevo token
@@ -136,12 +134,10 @@ class AuthController {
 
 
                     // Imprimir la alerta
-                    // Usuario::setAlerta('exito', 'Hemos enviado las instrucciones a tu email');
 
                     $alertas['exito'][] = 'Hemos enviado las instrucciones a tu email';
                 } else {
                  
-                    // Usuario::setAlerta('error', 'El Usuario no existe o no esta confirmado');
 
                     $alertas['error'][] = 'El Usuario no existe o no esta confirmado';
                 }
@@ -151,7 +147,8 @@ class AuthController {
         // Muestra la vista
         $router->render('auth/olvide', [
             'titulo' => 'Olvide mi Password',
-            'alertas' => $alertas
+            'alertas' => $alertas,
+            "usuario"=>$usuario
         ]);
     }
 

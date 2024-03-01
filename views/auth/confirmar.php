@@ -12,8 +12,13 @@
             <?php } ?>
         </div>
 
-        <div class="acciones mensaje__acciones">
-            <a href="/login">Iniciar Sesion</a>
+      
+        <div class="acciones--centrar acciones__mensaje">
+            <?php if(isset($alertas['exito'])){?>
+                <a href="/login" class="mensaje__enlace">Iniciar Sesion</a>
+            <?php }else{ ?>
+                <a href="/registro" class="mensaje__enlace">Registrarse</a>
+            <?php } ?>
         </div>
 
     </main>

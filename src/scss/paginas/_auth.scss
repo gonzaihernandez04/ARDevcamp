@@ -6,22 +6,15 @@
 
     .mensaje{
         &__logo{
-            font-size: 6rem;
+            @include m.textoFluido(3rem,6rem);
             color: v.$grisOscuro;
             text-align: center;
             margin: 2rem 0;
         }
-        &__acciones{
-           align-items: center;
-           justify-content: center;
-           @include m.botonBorde(v.$morado,v.$morado,v.$grisOscuro);
-           width: fit-content;
-           margin: 3rem auto;
-           a:hover{
+        &__enlace:hover{
             color: v.$blanco;
-           }
-          
         }
+       
     }
 }
 
