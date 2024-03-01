@@ -7,8 +7,8 @@
             <p class="mensaje__texto text-center bold"><?php include_once __DIR__ . '/../templates/nombre-pagina.php';?></p>
             <p class="text-center">Es necesario que confirmes tu cuenta. Revisa tu bandeja de entrada</p>
         </div>
-        <div class="acciones mensaje__acciones">
-            <a href="/login">Volver</a>
+        <div class="acciones--centrar acciones__mensaje">
+            <a href="/login" class="mensaje__enlace">Volver</a>
         </div>
 
     </main>

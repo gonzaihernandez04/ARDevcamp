@@ -17,8 +17,6 @@ class Usuario extends ActiveRecord {
     public $token;
     public $isAdmin;
 
-    public $password_actual;
-    public $password_nuevo;
 
     
     public function __construct($args = [])
@@ -99,22 +97,9 @@ class Usuario extends ActiveRecord {
         return self::$alertas;
     }
 
-    public function nuevo_password() : array {
-        if(!$this->password_actual) {
-            self::$alertas['error'][] = 'El Password Actual no puede ir vacio';
-        }
-        if(!$this->password_nuevo) {
-            self::$alertas['error'][] = 'El Password Nuevo no puede ir vacio';
-        }
-        if(strlen($this->password_nuevo) < 6) {
-            self::$alertas['error'][] = 'El Password debe contener al menos 6 caracteres';
-        }
-        return self::$alertas;
-    }
-
     // Comprobar el password
-    public function comprobar_password() : bool {
-        return password_verify($this->password_actual, $this->pass );
+    public function comprobar_password($pass) : bool {
+        return password_verify($pass, $this->pass );
     }
 
     // Hashea el password
