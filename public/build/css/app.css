@@ -452,7 +452,7 @@ h3 {
 
 .header {
   padding: 5rem 0;
-  min-height: 60rem;
+  min-height: 45rem;
   background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, rgba(255, 192, 203, 0.2), rgba(26, 27, 21, 0.3)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
   background-repeat: repeat;
   background-size: cover;
@@ -512,21 +512,34 @@ h3 {
   display: inline;
 }
 .header__footer {
-  padding: 0 2rem;
+  padding: 2rem 2rem;
   display: flex;
   background-color: rgba(0, 0, 0, 0.213);
   align-items: center;
+  justify-content: space-between;
 }
 .header__footer .header__texto {
-  color: rgb(241, 45, 188);
+  color: rgb(235, 79, 191);
   font-weight: 800;
 }
 .header__footer .header__texto:first-child {
   margin-right: 1rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .header__footer .header__texto--modalidad {
   font-weight: 500;
   color: #FFFFFF;
+  margin: 0;
+}
+.header__footer .header__accion a {
+  color: #FFFFFF;
+  padding: 1.3rem 2rem;
+  border-left: 4px solid rgb(235, 79, 191);
+  transition: all 0.5s;
+}
+.header__footer .header__accion a:hover {
+  background-color: rgb(235, 79, 191);
 }
 /*# sourceMappingURL=app.css.map */

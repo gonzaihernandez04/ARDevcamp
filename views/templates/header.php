@@ -11,8 +11,15 @@
             </a>
 
             <div class="header__footer">
-                <p class="header__texto">Octubre 5 - 6 2023</p>
-                <p class="header__texto header__texto--modalidad">En Linea - Presencial</p>
+                <div class="header__contenedor__texto">
+                    <p class="header__texto">| Octubre 5 - 6 / 2023 </p>
+                    <p class="header__texto header__texto--modalidad">| En Linea - Presencial</p>
+                </div>
+
+                <div class="header__accion">
+                    <a href="/registro" >Comprar pase</a>
+                </div>
+              
             </div>
         
        

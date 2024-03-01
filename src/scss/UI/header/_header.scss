@@ -3,7 +3,7 @@
 
 .header{
     padding: 5rem 0;
-    min-height: 60rem;
+    min-height: 45rem;
     
     background-image: url(../img/grafico.svg),url(../img/grafico.svg), linear-gradient(to right,rgba(pink, .2), rgba(v.$negro, .3)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
     background-repeat: repeat;
@@ -66,23 +66,31 @@
     }
 
     &__footer{
-        padding: 0 2rem;
+        padding: 2rem 2rem;
         display: flex;
         background-color: rgba(0, 0, 0, 0.213);
         align-items: center;
+        justify-content: space-between;
         .header__texto{
             color: v.$morado;
             font-weight: 800;
             &:first-child{
                 margin-right: 1rem;
-                font-size: 2rem;
+                font-size: 2.5rem;
+                margin-top: 0;
+                margin-bottom: 0;
             }
             &--modalidad{
                 font-weight: 500;
                 color: v.$blanco;
+                margin: 0
             }
         }
        
-       
+        .header__accion{
+           a{
+            @include m.botonBorde(v.$morado,v.$morado,v.$blanco);
+           }
+        }
     }
 }
