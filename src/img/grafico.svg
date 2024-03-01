@@ -4,12 +4,12 @@
 	 viewBox="0 0 714.1 570.1" style="enable-background:new 0 0 714.1 570.1;" xml:space="preserve">
 <style type="text/css">
 	.st0{opacity:0.4;}
-	.st1{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st1{fill:;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
 	.st2{opacity:0.4;fill:none;stroke:#FFFFFF;stroke-width:14;stroke-miterlimit:10;}
 	.st3{opacity:0.4;fill:none;stroke:#FFFFFF;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
-	.st4{opacity:0.4;fill:#FFFFFF;}
-	.st5{opacity:0.4;fill:none;stroke:#FFFFFF;stroke-width:8;stroke-miterlimit:10;}
-	.st6{fill:#FFFFFF;}
+	.st4{opacity:0.4;fill:none;}
+	.st5{opacity:0.4;fill:none;stroke:;stroke-width:8;stroke-miterlimit:10;}
+	.st6{fill:none;}
 </style>
 <g class="st0">
 	<line class="st1" x1="313.7" y1="228.2" x2="280.1" y2="194.6"/>

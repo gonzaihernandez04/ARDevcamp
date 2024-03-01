@@ -24,7 +24,7 @@ class AuthController {
                     Usuario::setAlerta('error', 'El Usuario No Existe o no esta confirmado');
                 } else {
                     // El Usuario existe
-                    if( password_verify($_POST['password'], $usuario->password) ) {
+                    if( password_verify($_POST['pass'], $usuario->pass) ) {
                         
                         // Iniciar la sesión
                         session_start();    
@@ -32,10 +32,10 @@ class AuthController {
                         $_SESSION['nombre'] = $usuario->nombre;
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
-                        $_SESSION['admin'] = $usuario->admin ?? null;
+                        $_SESSION['admin'] = $usuario->isAdmin ?? null;
                         
                     } else {
-                        Usuario::setAlerta('error', 'Password Incorrecto');
+                        Usuario::setAlerta('error', 'Contraseña Incorrecta');
                     }
                 }
             }
@@ -80,7 +80,7 @@ class AuthController {
                     $usuario->hashPassword();
 
                     // Eliminar password2
-                    unset($usuario->password2);
+                    unset($usuario->pass2);
 
                     // Generar el Token
                     $usuario->crearToken();
@@ -123,7 +123,7 @@ class AuthController {
 
                     // Generar un nuevo token
                     $usuario->crearToken();
-                    unset($usuario->password2);
+                    unset($usuario->pass2);
 
                     // Actualizar el usuario
                     $usuario->guardar();
@@ -228,7 +228,7 @@ class AuthController {
             // Confirmar la cuenta
             $usuario->confirmado = 1;
             $usuario->token = '';
-            unset($usuario->password2);
+            unset($usuario->pass2);
             
             // Guardar en la BD
             $usuario->guardar();

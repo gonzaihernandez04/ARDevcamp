@@ -26,12 +26,17 @@
                 <label for="pass" class="formulario__label">Contraseña</label>
                 <input type="password" name="pass" id="pass" class="formulario__input" placeholder="Contraseña">
             </div>
+            
+            <div class="formulario__campo">
+                <label for="pass2" class="formulario__label">Repetir contraseña</label>
+                <input type="password" name="pass2" id="pass2" class="formulario__input" placeholder="Repetir contraseña">
+            </div>
 
             <input type="submit" value="Iniciar sesion"  class="formulario__submit">
         </form>
         <div class="acciones">
             <a href="/login" class="acciones__enlace">¿Tienes una cuenta? Inicia sesión</a>
-            <a href="/olvide" class="acciones__enlace">¡Olvidaste tu contraseña?</a>
+            <a href="/olvide" class="acciones__enlace">¿Olvidaste tu contraseña?</a>
         </div>
 
     </main>

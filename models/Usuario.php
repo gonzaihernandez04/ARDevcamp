@@ -3,15 +3,15 @@
 namespace Model;
 
 class Usuario extends ActiveRecord {
-    protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'email', 'password', 'confirmado', 'token', 'admin'];
+    protected static $tabla = 'usuario';
+    protected static $columnasDB = ['id', 'nombre', 'apellido', 'email', 'pass', 'confirmado', 'token', 'isAdmin'];
 
     public $id;
     public $nombre;
     public $apellido;
     public $email;
-    public $password;
-    public $password2;
+    public $pass;
+    public $pass2;
     public $confirmado;
     public $token;
     public $admin;
@@ -26,8 +26,8 @@ class Usuario extends ActiveRecord {
         $this->nombre = $args['nombre'] ?? '';
         $this->apellido = $args['apellido'] ?? '';
         $this->email = $args['email'] ?? '';
-        $this->password = $args['password'] ?? '';
-        $this->password2 = $args['password2'] ?? '';
+        $this->pass = $args['password'] ?? '';
+        $this->pass = $args['password2'] ?? '';
         $this->confirmado = $args['confirmado'] ?? 0;
         $this->token = $args['token'] ?? '';
         $this->admin = $args['admin'] ?? '';
@@ -41,7 +41,7 @@ class Usuario extends ActiveRecord {
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             self::$alertas['error'][] = 'Email no válido';
         }
-        if(!$this->password) {
+        if(!$this->pass) {
             self::$alertas['error'][] = 'El Password no puede ir vacio';
         }
         return self::$alertas;
@@ -59,13 +59,13 @@ class Usuario extends ActiveRecord {
         if(!$this->email) {
             self::$alertas['error'][] = 'El Email es Obligatorio';
         }
-        if(!$this->password) {
+        if(!$this->pass) {
             self::$alertas['error'][] = 'El Password no puede ir vacio';
         }
-        if(strlen($this->password) < 6) {
+        if(strlen($this->pass) < 6) {
             self::$alertas['error'][] = 'El password debe contener al menos 6 caracteres';
         }
-        if($this->password !== $this->password2) {
+        if($this->pass !== $this->pass) {
             self::$alertas['error'][] = 'Los password son diferentes';
         }
         return self::$alertas;
@@ -84,10 +84,10 @@ class Usuario extends ActiveRecord {
 
     // Valida el Password 
     public function validarPassword() {
-        if(!$this->password) {
+        if(!$this->pass) {
             self::$alertas['error'][] = 'El Password no puede ir vacio';
         }
-        if(strlen($this->password) < 6) {
+        if(strlen($this->pass) < 6) {
             self::$alertas['error'][] = 'El password debe contener al menos 6 caracteres';
         }
         return self::$alertas;
@@ -108,12 +108,12 @@ class Usuario extends ActiveRecord {
 
     // Comprobar el password
     public function comprobar_password() : bool {
-        return password_verify($this->password_actual, $this->password );
+        return password_verify($this->password_actual, $this->pass );
     }
 
     // Hashea el password
     public function hashPassword() : void {
-        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+        $this->pass = password_hash($this->pass, PASSWORD_BCRYPT);
     }
 
     // Generar un Token

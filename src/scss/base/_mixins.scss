@@ -88,5 +88,8 @@
 @mixin textoPagina(){
     font-weight: v.$bold;
     font-size: 5rem;
-    color: red;
+
+}
+@mixin texto-fluido($min,$max){
+    font-size: clamp($min,-.8rem + 10vw,$max);
 }
