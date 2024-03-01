@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/formulario.scss"],"names":[],"mappings":"AAAA;EACI;EACA","file":"formulario.css","sourcesContent":[".formulario{\r\n    max-width: 75%;\r\n    margin: 0 auto;\r\n    .campo{\r\n\r\n\r\n\r\n    }\r\n}"]}

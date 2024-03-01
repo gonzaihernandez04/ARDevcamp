@@ -1,0 +1,92 @@
+@use 'variables' as v;
+
+/** Media Queries **/
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin xl_desktop {
+    @media (min-width: v.$xl_desktop) {
+        @content;
+    }
+}
+
+@mixin animaciones($animacion,$duracion,$tipo,$limite){
+    animation: $animacion $duracion $tipo $limite;
+}
+
+@mixin boton($bgColor, $colorTexto) {
+    background-color: $bgColor;
+    padding: 1.5rem 4rem;
+    color: $colorTexto;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+
+    &:hover {
+        background-color: darken( $bgColor, 10% );
+        cursor: pointer;
+    }
+}
+
+@mixin boxShadow($color){
+    -webkit-box-shadow: 0px 0px 20px 0px $color;
+    -moz-box-shadow: 0px 0px 20px 0px $color;
+    box-shadow: 0px 0px 20px 0px $color;
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin contenedor(){
+    width: min(95%,115rem);
+    padding: 5rem 2rem;
+    margin: 4rem auto 0 auto;
+    @include boxShadow(v.$grisClaro);
+}
+
+@mixin contenedor-sm(){
+    width: min(95%,80rem);
+    padding: 5rem 2rem;
+    margin: 4rem auto 0 auto;
+    @include boxShadow(v.$grisClaro);
+}
+
+@mixin headings(){
+    font-family: v.$fuente-principal;
+    font-weight: v.$black;
+    color: v.$grisOscuro;
+
+    margin: 2rem 0;
+}
+
+
+@mixin nombre-pagina(){
+    margin: 6rem 0 3rem 0;
+    text-align: center;
+}
+
+@mixin textoPagina(){
+    font-weight: v.$bold;
+    font-size: 5rem;
+    color: red;
+}
