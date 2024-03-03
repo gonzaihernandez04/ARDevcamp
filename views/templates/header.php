@@ -7,7 +7,7 @@
 
         <div class="header__contenido">
             <a href="/">
-                <h1 class="header__logo text-center">&#60;<span>ARG</span><span>Dev</span> <span>Camp /></span></h1>
+                <h1 class="header__logo text-center"><span>&#60;ARG</span> Dev<span>Camp /></span></h1>
             </a>
 
             <div class="header__footer">
@@ -31,7 +31,7 @@
 <div class="barra">
     <div class="barra__contenido">
         <a href="/">
-          <h2 class="barra__logo">&#60; ArgDevCamp/></h2>
+          <h2 class="barra__logo--white">&#60; ArgDevCamp/></h2>
         </a>
         <div class="navegacion">
             <a href="/argdevcamp" class="navegacion__enlace">Evento</a>

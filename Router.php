@@ -38,7 +38,9 @@ class Router
 
     public function render($view, $datos = [])
     {
+  
         foreach ($datos as $key => $value) {
+           
             $$key = $value; 
         }
 
@@ -48,6 +50,16 @@ class Router
 
         $contenido = ob_get_clean(); // Limpia el Buffer
 
-        include_once __DIR__ . '/views/layout.php';
+        // Utilizar el layout de acuerdo a la URL.
+        $url_actual = $_SERVER['PATH_INFO'] ?? '/';
+
+        if(str_contains($url_actual,'/admin')){
+            include_once __DIR__ . '/views/admin-layout.php';
+
+        }else{
+            include_once __DIR__ . '/views/layout.php';
+
+        }
+
     }
 }

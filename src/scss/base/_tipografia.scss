@@ -25,10 +25,18 @@ h3 {
 [class$="__heading"]{
     @include m.nombre-pagina;
 }
-[class$="__logo"]{
+[class*="__logo"]{
     @include m.logo;
 
+
    
+}
+[class$="--black"]{
+    color: v.$grisOscuro;
+}
+
+[class$="--white"]{
+    color: v.$blanco;
 }
 
 

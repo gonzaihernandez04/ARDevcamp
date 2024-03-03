@@ -2,10 +2,10 @@
 @use 'base/variables' as v;
 
 .header{
-    padding: 3rem 0;
-    min-height: 45rem;
+    padding: 2rem 0;
+    min-height: 71rem;
     
-    background-image: url(../img/grafico.svg),url(../img/grafico.svg), linear-gradient(to right,rgba(pink, .2), rgba(v.$negro, .5)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
+    background-image: url(../img/grafico.svg),url(../img/grafico.svg), linear-gradient(to right,rgba(v.$negro, .2), rgba(v.$negro, .5)), image-set(url(../img/header.avif) 1x, url(../img/header.webp) 1x, url(../img/header.jpg) 1x);
     background-repeat: no-repeat;
     background-size: 500px, 500px, cover, cover;
     background-position:top left, bottom right, center center;
@@ -16,10 +16,12 @@
   
  
     }
+
+
     &__nav{
         display: flex;
         flex-direction: row;
-        margin-bottom: 6rem;
+
         align-items: center;
         justify-content: center;
         @include m.tablet{
@@ -28,18 +30,19 @@
     }
     
     &__enlace{
-        color: v.$blanco;
+
         transition: color .2s ease-in-out;
-       
-        margin: 0 1rem;
-        &:hover{
-            color: v.$azul;
-        }
+
+       @include m.enlace(v.$blanco,v.$azul,1.2rem,2rem);
+       &:first-child{
+        margin-right: 1rem;
+       }
     
     }
 
     &__logo{
-        margin: 2rem 0 6rem 0;
+        text-align: center;
+        padding: 12rem  0;
         color: v.$blanco;
         font-size: 7rem;
         text-transform: uppercase;
@@ -51,15 +54,18 @@
             font-size: 12rem;
         }
         @include m.desktop{
-            font-size: 14rem;
+            font-size: 12.5rem;
         }
         span{
             display: block;
             color: v.$blanco;
         }
         span:first-child{
-            color: v.$azul;
-          display: inline;
+           display: inline;
+          /** TEXT GRADIENT */ color: v.$celeste; 
+          background-image: -webkit-linear-gradient(45deg, v.$celeste 40%, v.$rosa 58%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;
+          
+        
         
         }
       
@@ -92,8 +98,10 @@
                 font-weight: 500;
                 color: v.$blanco;
                 margin-bottom: 3rem;
+                font-size: 1.4rem;
                 @include m.tablet{
                     margin: 0;
+                    font-size: 1.8rem;
 
                 }
             }
@@ -107,6 +115,7 @@
            a{
             @include m.botonBorde(v.$morado,v.$morado,v.$blanco);
             font-size: 1.6rem;
+            text-align: center;
             @include m.tablet{
                 font-size: 2rem;
                 

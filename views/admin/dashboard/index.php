@@ -1,0 +1,1 @@
+<h2 clas="dashboard__heading"><?php include_once __DIR__ . '/../../templates/nombre-pagina.php'?></h2>

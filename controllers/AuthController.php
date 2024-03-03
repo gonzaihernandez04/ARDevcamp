@@ -36,6 +36,8 @@ class AuthController
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['admin'] = $usuario->isAdmin ?? null;
+
+              
                     } else {
                         Usuario::setAlerta('error', 'Contraseña Incorrecta');
                     }
@@ -176,26 +178,24 @@ class AuthController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-
-         
             $passwords = [
                 "pass" => s($_POST['pass']),
                 "pass2" => s($_POST['pass2'])
             ];
-            
-            
+
+
             if (!$usuario->comprobar_password($passwords['pass']) && $passwords["pass"] == $passwords['pass2']) {
                 // Validar el password
-                $usuario->sincronizar($_POST);
+                $usuario->sincronizar($passwords);
                 $alertas = $usuario->validarPassword();
-                
+
                 if (empty($alertas)) {
                     // Hashear el nuevo password
                     $usuario->hashPassword();
 
 
                     // Eliminar el Token
-                   // $usuario->token = null;
+                    // $usuario->token = null;
 
                     // Guardar el usuario en la BD
                     $resultado = $usuario->guardar();
@@ -205,8 +205,8 @@ class AuthController
                         header('Location: /login');
                     }
                 }
-            }else{
-                Usuario::setAlerta('error',"Las contraseñas deben ser iguales o ser diferente a tu anterior contraseña");
+            } else {
+                Usuario::setAlerta('error', "Las contraseñas deben ser iguales o ser diferente a tu anterior contraseña");
             }
         }
 
