@@ -74,7 +74,8 @@ class PonentesController{
         $router->render('admin/ponentes/crear',[
             'titulo'=> 'Registrar ponente',
             'alertas'=> $alertas,
-            'ponente'=>$ponente
+            'ponente'=>$ponente,
+            'redes' => json_decode($ponente->redes)
         ]);
     
     }
@@ -99,12 +100,14 @@ class PonentesController{
         }
 
         
-       
+      $redes = json_decode($ponente->redes);
+      
        $alertas = Ponente::getAlertas();
         $router->render('admin/ponentes/editar',[
             'titulo'=> 'Editar ponente',
             'alertas'=> $alertas,
-            'ponente'=>$ponente ?? null
+            'ponente'=>$ponente ?? null,
+            "redes"=> $redes
         ]);
     }
 }
