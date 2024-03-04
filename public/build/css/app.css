@@ -530,6 +530,9 @@ h3 {
   border: 2px solid rgb(221, 221, 221);
   width: 100%;
 }
+.formulario__input__texto {
+  margin-top: 3rem;
+}
 .formulario__listado {
   margin: 0;
   padding: 0;
@@ -572,6 +575,9 @@ h3 {
 }
 .formulario__submit--registrar {
   width: 100%;
+}
+.formulario__imagen {
+  max-width: 30rem;
 }
 
 .header {

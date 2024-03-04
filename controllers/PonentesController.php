@@ -77,5 +77,34 @@ class PonentesController{
             'ponente'=>$ponente
         ]);
     
-}
+    }
+
+    public static function editar(Router $router){
+        $alertas = [];
+        $ponente = new Ponente;
+        $id = s($_GET['id']);
+        $id = filter_var($id,FILTER_VALIDATE_INT);
+        if(!$id) header("Location: /admin/ponentes");
+
+        //Obtener ponente a editar
+        $ponente = Ponente::find($id);
+        if(!$ponente) header("Location: /admin/ponentes");
+
+        $ponente->imagen_actual = $ponente->imagen;
+       if($_SERVER['REQUEST_METHOD'] === "POST"){
+      
+         
+
+               
+        }
+
+        
+       
+       $alertas = Ponente::getAlertas();
+        $router->render('admin/ponentes/editar',[
+            'titulo'=> 'Editar ponente',
+            'alertas'=> $alertas,
+            'ponente'=>$ponente ?? null
+        ]);
+    }
 }

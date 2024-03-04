@@ -3,6 +3,15 @@
     const tagsInputHidden = document.querySelector('[name="tags"]');
 
     let tagsArray = [];
+
+    // Recuperar del input oculto
+
+    if(tagsInputHidden.value!==''){
+        tagsArray = tagsInputHidden.value.split(',');
+        mostrarTags();
+    }
+
+
     tags();
     function tags(){
         const inputTag = document.querySelector('#tags-input');
