@@ -79,7 +79,7 @@
     width: min(95%,80rem);
     padding: 5rem 2rem;
     margin: 4rem auto 0 auto;
-    @include boxShadow(v.$grisClaro);
+    @include boxShadow(v.$grisBlanco);
 }
 
 @mixin contenedor-lg(){
@@ -154,5 +154,31 @@
     &:hover{
         cursor: pointer;
         color: $color2;
+    }
+}
+
+
+@mixin reset-lista{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin tags(){
+    @include reset-lista();
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    > li{
+        background-color: v.$azul;
+        color: v.$blanco;
+        padding: 1rem;
+        border-radius: .5rem;
+        font-weight: v.$bold;
+        
+        &:hover{
+            cursor: pointer;
+        }
     }
 }

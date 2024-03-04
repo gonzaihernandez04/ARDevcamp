@@ -1,7 +1,16 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
 .formulario{
-    margin: 3rem auto;
+    margin: 4rem auto;
+    &__fieldset{
+        margin-bottom:  4rem ;
+        border: none;
+    }
+    &__legend{
+        color: v.$gris;
+        font-size: 2.2rem;
+   
+    }
 
     &__campo{
         margin-top: 2.2rem;
@@ -10,19 +19,33 @@
         align-items: left;
         @include m.desktop{
             margin-top: 1.9rem;
-            flex-direction: row;
-            align-items: center;
+           
+        }
+    }
+    &__contenedor-icono{
+        display: flex;
+    }
+    &__icono{
+        width: 4rem;
+        background-color: v.$grisOscuro;
+        display: grid;
+        place-items: center;
+        border-bottom-left-radius: .5rem;
+        border-top-left-radius: .5rem;
+        i{
+            color: v.$blanco;
         }
     }
 
     &__label{
+        display: block;
         margin: .8rem;
         @include m.tablet{
             flex: 0 0 0rem;
      
         }
         @include m.desktop{
-            flex: 0 0 11rem;
+      
             margin: 0;
         }
     }
@@ -33,12 +56,25 @@
         outline: none;
         border-bottom: 1px solid v.$grisOscuro;
         flex: .9;
+        width: 89%;
         transition: all .3s ease-in-out;
         &:focus{
             width: 100%;
             flex: 1;
             border-bottom: 1px solid v.$grisOscuro
         }
+        &--file{
+            border: none
+        }
+        &--sociales{
+       
+            border: 2px solid v.$grisBlanco;
+            width:100%;
+        }
+    }
+
+    &__listado{
+        @include m.tags;
     }
 
     &__submit{
@@ -47,5 +83,8 @@
         padding: 1.2rem;
         margin-top: 4rem;
         font-size: 1.7rem;
+        &--registrar{
+            width: 100%;
+        }
     }
 }

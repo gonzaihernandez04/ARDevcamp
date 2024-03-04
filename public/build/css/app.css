@@ -326,6 +326,10 @@ img {
   display: block;
 }
 
+[class$="--bgwhite"] {
+  background-color: #FFFFFF;
+}
+
 h1, h2, h3 {
   font-family: "Outfit", sans-serif;
   font-weight: 900;
@@ -416,9 +420,9 @@ h3 {
   width: min(95%, 80rem);
   padding: 5rem 2rem;
   margin: 4rem auto 0 auto;
-  -webkit-box-shadow: 0px 0px 20px 0px #e9e9ea;
-  -moz-box-shadow: 0px 0px 20px 0px #e9e9ea;
-  box-shadow: 0px 0px 20px 0px #e9e9ea;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  -moz-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
   margin: 2rem auto;
   padding: 1rem 1.5rem;
   font-weight: 700;
@@ -439,9 +443,9 @@ h3 {
   width: min(95%, 80rem);
   padding: 5rem 2rem;
   margin: 4rem auto 0 auto;
-  -webkit-box-shadow: 0px 0px 20px 0px #e9e9ea;
-  -moz-box-shadow: 0px 0px 20px 0px #e9e9ea;
-  box-shadow: 0px 0px 20px 0px #e9e9ea;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  -moz-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
 }
 .auth .mensaje__logo {
   font-size: clamp(3rem, -0.8rem + 10vw, 6rem);
@@ -454,7 +458,15 @@ h3 {
 }
 
 .formulario {
-  margin: 3rem auto;
+  margin: 4rem auto;
+}
+.formulario__fieldset {
+  margin-bottom: 4rem;
+  border: none;
+}
+.formulario__legend {
+  color: #64748B;
+  font-size: 2.2rem;
 }
 .formulario__campo {
   margin-top: 2.2rem;
@@ -465,11 +477,24 @@ h3 {
 @media (min-width: 1024px) {
   .formulario__campo {
     margin-top: 1.9rem;
-    flex-direction: row;
-    align-items: center;
   }
 }
+.formulario__contenedor-icono {
+  display: flex;
+}
+.formulario__icono {
+  width: 4rem;
+  background-color: #1E293B;
+  display: grid;
+  place-items: center;
+  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+.formulario__icono i {
+  color: #FFFFFF;
+}
 .formulario__label {
+  display: block;
   margin: 0.8rem;
 }
 @media (min-width: 768px) {
@@ -479,7 +504,6 @@ h3 {
 }
 @media (min-width: 1024px) {
   .formulario__label {
-    flex: 0 0 11rem;
     margin: 0;
   }
 }
@@ -490,12 +514,39 @@ h3 {
   outline: none;
   border-bottom: 1px solid #1E293B;
   flex: 0.9;
+  width: 89%;
   transition: all 0.3s ease-in-out;
 }
 .formulario__input:focus {
   width: 100%;
   flex: 1;
   border-bottom: 1px solid #1E293B;
+}
+.formulario__input--file {
+  border: none;
+}
+.formulario__input--sociales {
+  border: 2px solid rgb(221, 221, 221);
+  width: 100%;
+}
+.formulario__listado {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.formulario__listado > li {
+  background-color: #007df4;
+  color: #FFFFFF;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+.formulario__listado > li:hover {
+  cursor: pointer;
 }
 .formulario__submit {
   background-color: #0070db;
@@ -517,6 +568,9 @@ h3 {
 .formulario__submit:hover {
   background-color: #0056a8;
   cursor: pointer;
+}
+.formulario__submit--registrar {
+  width: 100%;
 }
 
 .header {
@@ -807,6 +861,7 @@ h3 {
 .dashboard__grid {
   display: flex;
   flex: 1;
+  overflow-y: hidden;
 }
 .dashboard__sidebar {
   background-color: #2f405d;
@@ -847,6 +902,7 @@ h3 {
   font-size: 2rem;
 }
 .dashboard__contenido {
+  overflow-y: scroll;
   padding: 1rem 1rem 3rem 1rem;
   width: 100%;
 }
@@ -854,5 +910,53 @@ h3 {
   .dashboard__contenido {
     padding: 1rem 5rem 3rem 5rem;
   }
+}
+.dashboard__contenedor-boton {
+  margin: 5rem;
+}
+@media (min-width: 1024px) {
+  .dashboard__contenedor-boton {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.dashboard__boton {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.dashboard__boton:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dashboard__boton {
+    width: fit-content;
+  }
+}
+.dashboard__contenedor, .dashboard__formulario {
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  -moz-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.dashboard__formulario {
+  width: min(95%, 80rem);
+  padding: 5rem 2rem;
+  margin: 4rem auto 0 auto;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  -moz-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
 }
 /*# sourceMappingURL=app.css.map */

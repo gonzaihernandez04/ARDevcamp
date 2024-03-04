@@ -25,6 +25,6 @@
      
     <?php $script = "<script src='/build/js/pagina-actual.js' defer ></script>"?>
 
-    <?php echo $script?>
+    <?php echo $script ?? ''?>
 </body>
 </html>
