@@ -8,3 +8,18 @@
         Añadir ponente
     </a>
 </div>
+
+
+<div class="dashboard__contenedor">
+    <?php if(!empty($ponentes)){?>
+
+
+
+    <?php } else {?>
+        <div class="alerta">
+             <p class="alerta--advertencia  text-center">No hay ponentes aun</p>
+        </div>
+  
+
+    <?php   }  ?>
+</div>

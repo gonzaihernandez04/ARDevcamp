@@ -30,9 +30,7 @@
         justify-content: center;
     }
 
-    &__nav{
-
-    }
+   
     &__submit{
         @include m.enlace(v.$blanco,v.$azul,1.3rem,3rem);
     }
@@ -118,6 +116,10 @@
         @include m.boxShadow(v.$grisBlanco);
         border-radius: 1rem;
         padding: 2rem;
+        .alerta .alerta--advertencia{
+            box-shadow: none;
+        }
+       
     }   
 
     &__formulario{
@@ -126,5 +128,6 @@
        
        
     }
+    
 
 }

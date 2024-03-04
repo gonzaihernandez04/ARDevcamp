@@ -2,7 +2,6 @@
 @use 'base/mixins' as m;
 .alerta{
 
-    @include m.contenedor-sm;
     margin: 2rem auto;
     padding: 1rem 1.5rem;
     font-weight: v.$bold;
@@ -18,5 +17,14 @@
         background-color: lighten(v.$verde,40%);
         border-left: 5px solid v.$verde;
         color: darken(v.$verde,20%);
+    }
+
+    &--advertencia{
+        background-color: lighten(v.$azul,40%);
+        border-left: 5px solid v.$azul;
+        color: darken(v.$verde,20%);
+        padding: 3rem;
+        box-shadow: none;
+
     }
 }

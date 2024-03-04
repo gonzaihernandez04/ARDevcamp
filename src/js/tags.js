@@ -47,6 +47,7 @@
             etiqueta.onclick = eliminarTag;
             tagsDiv.appendChild(etiqueta);
         });
+        tagsDiv.appendChild(tagsInputHidden)
         actualizarInputHidden();
       
     }
