@@ -13,12 +13,12 @@ class AuthController
 
         $alertas = [];
         $usuario = new Usuario;
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+      
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $usuario = new Usuario($_POST);
 
             $alertas = $usuario->validarLogin();
+
 
             if (empty($alertas)) {
                 // Verificar quel el usuario exista
@@ -26,6 +26,8 @@ class AuthController
                 if (!$usuario || !$usuario->confirmado) {
                     Usuario::setAlerta('error', 'El Usuario No Existe o no esta confirmado');
                 } else {
+                 
+
                     // El Usuario existe
                     if (password_verify($_POST['pass'], $usuario->pass)) {
 
@@ -36,6 +38,11 @@ class AuthController
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['admin'] = $usuario->isAdmin ?? null;
+                        if($_SESSION['admin']){
+                            header("Location: /admin/dashboard");
+                        }else{
+                            header("Location: /finalizar-registro");
+                        }
 
               
                     } else {

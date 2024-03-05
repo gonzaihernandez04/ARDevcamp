@@ -34,7 +34,8 @@
                                 Editar 
                             </a>
 
-                            <form action="/admin/ponentes/borrar" method="POST" class="table__formulario">
+                            <form action="/admin/ponentes/eliminar" method="POST" class="table__formulario">
+                                <input type="hidden" name="id" value="<?php echo $ponente->id;?>">
                                 <button class="table__accion table__accion--eliminar" type="submit">
                                 <i class="fa-solid fa-circle-xmark"></i>
                                 Eliminar</button>

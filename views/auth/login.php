@@ -5,10 +5,11 @@
         <h2 class="nombre-pagina auth__heading text-center"> <?php include_once __DIR__ . '/../templates/nombre-pagina.php'; ?> </h2>
         <p class="auth__texto text-center">Inicia sesion en ARDevcamp</p>
 
-            <form class="formulario">
+            <form class="formulario" method="POST" action="/login">
+                <?php include_once __DIR__ . '/../templates/alertas.php';?>
                 <div class="formulario__campo">
                     <label for="email" class="formulario__label">Email</label>
-                    <input type="email" name="email" id="email" class="formulario__input" placeholder="email@email.com">
+                    <input type="email" name="email" id="email" class="formulario__input" placeholder="email@email.com" value="<?php echo $usuario->email ?? '';?>">
                 </div>
 
                 <div class="formulario__campo">
