@@ -4,7 +4,7 @@ ARGDevCamp es un evento para conferencias de desarrolladores, donde toda la comu
 
 Lenguajes utilizados: PHP, SASS, JavaScript, MYSQL
 
-Librerias: PHPMailer, PHPdotenv, SweetAlert2, PSR-4
+Librerias: PHPMailer, PHPdotenv, SweetAlert2, PSR-4, InterventionImage
 
 Manejador de paquetes: Composer, NPM
 
@@ -36,6 +36,8 @@ Reutilizacion de estilos: En este proyecto se aprovecho el uso excesivo de MIXIN
 ## Funciones de la web
 Crear cuenta, login, confirmar cuenta, olvide mi contraseña, restablecer contraseña.
 
+
+Paginacion: La paginacion es un elemento super importante para webs con muchos registros. Alivianan la carga al servidor y permite una experiencia de usuario muy agradable. Este proyecto lo incorpora. Se crearon tanto consultas para la base de datos como funciones especificas y una clase para la Paginacion.
 
 
 ### Funciones agregadas:

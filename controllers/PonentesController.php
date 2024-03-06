@@ -5,18 +5,40 @@ namespace Controllers;
 use MVC\Router;
 use Model\Ponente;
 use Intervention\Image\ImageManagerStatic as Image;
+use Classes\Paginacion;
 
 class PonentesController
 {
     public static function index(Router $router)
     {
+        // Obtengo el GET, que al principio es null
+        $pagina_actual = $_GET['page'];
+        // Valido que sea un entero, aunque no exista
+        $pagina_actual = filter_var($pagina_actual,FILTER_VALIDATE_INT);
+
+        // Si no existe una pagina, o el valor es menor a 1, establezco la direccion page=1;
+        //La primera vez siempre sera =1 ya que esta variable $_get, no existe.
+        if(!$pagina_actual || $pagina_actual<1) header("Location: /admin/ponentes?page=1");
+
+        $total = Ponente::total();
+
+        $registros_por_pagina = 5;
+    
+
+        $paginacion = new Paginacion($pagina_actual,$registros_por_pagina,$total);
+
+        if($paginacion->total_paginas()<$pagina_actual){
+            header("Location: /admin/ponentes?page=1");
+        }
+
+        
         if(!isAuth()) header("Location: /login");
         if(!isAdmin()) header("Location: /auth/finalizar-registro");
-        $ponentes = Ponente::all();
-
+        $ponentes = Ponente::paginar($registros_por_pagina,$paginacion->offset());
         $router->render('admin/ponentes/index', [
             'titulo' => 'Ponentes',
-            'ponentes' => $ponentes
+            'ponentes' => $ponentes,
+            "paginacion"=>$paginacion->paginacion()
         ]);
     }
 
