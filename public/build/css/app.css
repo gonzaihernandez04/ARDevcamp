@@ -506,9 +506,10 @@ h3 {
 @media (min-width: 1024px) {
   .formulario__label {
     margin: 0;
+    margin-bottom: 1.3rem;
   }
 }
-.formulario__input {
+.formulario__input, .formulario__select {
   border: none;
   padding: 1rem;
   background-color: #FFFFFF;
@@ -518,7 +519,7 @@ h3 {
   width: 89%;
   transition: all 0.3s ease-in-out;
 }
-.formulario__input:focus {
+.formulario__input:focus, .formulario__select:focus {
   width: 100%;
   flex: 1;
   border-bottom: 1px solid #1E293B;
@@ -578,6 +579,13 @@ h3 {
 }
 .formulario__imagen {
   max-width: 30rem;
+}
+.formulario__textarea {
+  resize: none;
+}
+.formulario__radio {
+  display: flex;
+  gap: 2rem;
 }
 
 .header {

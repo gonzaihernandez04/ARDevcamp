@@ -41,8 +41,9 @@ class ActiveRecord {
         return $resultado;
     }
 
-    public static function all() {
-        $query = "SELECT * FROM " . static::$tabla;
+    public static function all($order = 'DESC') {
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id {$order};";
+     
         $resultado = self::consultarSQL($query);
         return $resultado;
     }

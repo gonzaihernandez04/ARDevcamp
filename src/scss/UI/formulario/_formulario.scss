@@ -14,6 +14,7 @@
 
     &__campo{
         margin-top: 2.2rem;
+     
         display: flex;
         flex-direction: column;
         align-items: left;
@@ -40,6 +41,7 @@
     &__label{
         display: block;
         margin: .8rem;
+      
         @include m.tablet{
             flex: 0 0 0rem;
      
@@ -47,6 +49,7 @@
         @include m.desktop{
       
             margin: 0;
+            margin-bottom: 1.3rem;
         }
     }
     &__input{
@@ -94,5 +97,15 @@
 
     &__imagen{
         max-width: 30rem
+    }
+    &__textarea{
+        resize: none;
+    }
+    &__select{
+        @extend .formulario__input;
+    }
+    &__radio{
+        display: flex;
+        gap: 2rem;
     }
 }
