@@ -14,37 +14,30 @@
 
 
 <div class="dashboard__contenedor">
-    <?php if(!empty($ponentes)){?>
+    <?php if(!empty($eventos)){?>
         <table class="table">
             <thead class="table__thead">
                 <tr>
-                    <th scope="col" class="table__th">Nombre</th>
-                    <th scope="col" class="table__th">Ubicacion</th>
-                    <th scope="col" class="table__th"></th>
+                    <th scope="col" class="table__th">Evento</th>
+                    <th scope="col" class="table__th">Categoria</th>
+                    <th scope="col" class="table__th">Dia y Hora</th>
+                    <th scope="col" class="table__th">Ponente</th>
+                    <th scope="col" class="table__th">Acciones</th>
                 </tr>
             </thead>
 
             <tbody class="table__tbody">
-                <?php foreach($ponentes as $ponente){?>
+                <?php foreach($eventos as $evento){?>
 
                     <tr class="table__tr">
-                        <td class="table__td"><?php echo $ponente->nombre .' ' . $ponente->apellido;?></td>
-                        <td class="table__td"><?php echo $ponente->ciudad .' ' . $ponente->pais;?></td>
+                        <td class="table__td"><?php echo $evento->nombre;?></td>
+                        <td class="table__td"><?php echo $evento->categoria->nombre;?></td>
+                        <td class="table__td"><?php echo $evento->dia->nombre . ' de ' . $evento->hora->hora;?></td>
+                        <td class="table__td"><?php echo $evento->ponente->nombre . " " . $evento->ponente->apellido;?></td>
 
-                        <td class="table__td--acciones">
-                            <a  class="table__accion table__accion--editar" href="/admin/ponentes/editar?id=<?php echo $ponente->id;?>">
-                                <i class="fa-solid fa-user-pen"></i>
-                                Editar 
-                            </a>
-
-                            <form action="/admin/ponentes/eliminar" method="POST" class="table__formulario">
-                                <input type="hidden" name="id" value="<?php echo $ponente->id;?>">
-                                <button class="table__accion table__accion--eliminar" type="submit">
-                                <i class="fa-solid fa-circle-xmark"></i>
-                                Eliminar</button>
-                            </form>
-                        </td>
                     </tr>
+
+
                  <?php } ?>
             </tbody>
 

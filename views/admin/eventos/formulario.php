@@ -54,8 +54,14 @@
 <fieldset class="formulario__fieldset">
     <legend class="formulario__legend">Informacion Extra:</legend>
     <div class="formulario__campo">
-        <label class="formulario__label" for="ponentes">Ponente</label>
-        <input type="text"  id="ponentes" class="formulario__input" placeholder="Buscar ponente" value="<?php echo $evento->nombre ?? ''; ?>">
+        <label class="formulario__label" for="ponente_id">Ponente</label>
+        <input type="text"  id="ponentes" class="formulario__input" placeholder="Buscar ponente" value="<?php echo isset($evento->ponente) ? $evento->ponente->nombre ." ".  $evento->ponente->apellido : '';?>">
+
+        <ul id="listado-ponentes" class="listado-ponentes">
+
+        </ul>
+
+        <input type="hidden" name="ponente_id" value="<?php echo $evento->ponente_id ?? ''?>">
     </div>
 
 

@@ -928,8 +928,8 @@ h3 {
   .dashboard__grid {
     display: grid;
     grid-template-columns: 0.2fr 2fr;
-    place-content: center;
     overflow-y: hidden;
+    place-content: unset;
   }
 }
 .dashboard__sidebar {
@@ -968,9 +968,11 @@ h3 {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100%;
 }
 @media (min-width: 768px) {
   .dashboard__menu {
+    height: fit-content;
     flex-direction: column;
   }
 }
@@ -1140,5 +1142,30 @@ h3 {
   .paginacion__enlace--numero {
     display: block;
   }
+}
+
+.listado-ponentes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1;
+  grid-template-columns: repeat(1, 1fr);
+}
+.listado-ponentes__ponente, .listado-ponentes__ponente--seleccionado {
+  color: #007df4;
+  border-left: 5px solid #007df4;
+  padding: 1rem;
+  text-align: center;
+}
+.listado-ponentes__ponente:hover, .listado-ponentes__ponente--seleccionado:hover {
+  cursor: pointer;
+}
+.listado-ponentes__ponente:last-of-type, .listado-ponentes__ponente--seleccionado:last-of-type {
+  margin-top: 1rem;
+}
+.listado-ponentes__ponente--seleccionado {
+  background-color: #007df4;
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=app.css.map */

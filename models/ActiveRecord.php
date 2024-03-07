@@ -133,7 +133,6 @@ class ActiveRecord {
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
     
-
         // Resultado de la consulta
         $resultado = self::$db->query($query);
 
@@ -207,10 +206,15 @@ class ActiveRecord {
     // Identificar y unir los atributos de la BD
     public function atributos() {
         $atributos = [];
+     
         foreach(static::$columnasDB as $columna) {
+            $columna = trim($columna);
             if($columna === 'id') continue;
             $atributos[$columna] = $this->$columna;
+           
         }
+      
+
         return $atributos;
     }
 
@@ -219,7 +223,9 @@ class ActiveRecord {
         $sanitizado = [];
         foreach($atributos as $key => $value ) {
             $sanitizado[$key] = self::$db->escape_string($value);
+        
         }
+     
         return $sanitizado;
     }
 

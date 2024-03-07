@@ -43,13 +43,19 @@
         flex: 1;
    
         overflow-y: scroll;
+ 
+
         @include m.grid(1,1rem);
         @include m.telefono{
            display: grid;
            grid-template-columns: .2fr 2fr;
-           place-content: center;
            overflow-y: hidden;
+           place-content: unset;
+           
      
+        }
+        @include m.tablet{
+            
         }
     }
     &__sidebar{
@@ -90,7 +96,9 @@
         align-items: center;
         flex-wrap: wrap;
         justify-content: center;
+        height: 100%;
         @include m.tablet{
+            height: fit-content;
             flex-direction: column;
         }
     

@@ -50,7 +50,7 @@ Por lo que se hizo uso de la funcion de PHP array_key_last($array) y se comprobo
 Otra opcion fue SUBSTR(), pero no es muy optima, no por rendimiento, sino que necesita una especificidad de caracteres a eliminar, contando por ejemplo, espacios.
 
 ## Nuevas funciones de JS:
-Por necesidad de la logica del codigo y acceso a las variables, se necesito convertir NodeList(elementos en nodo de HTML) a un array. Ahora si bien su estructura es similar, un NODELIST no se puede recorrer con un FILTER, ni MAP, y tampoco foreach. Es por esto que se incorporo: Array.from(nodelist);
+Por necesidad de la logica del codigo y acceso a las variables, se necesito convertir NodeList(elementos en nodo de HTML) a un array. Ahora si bien su estructura es similar, un NODELIST no se puede recorrer con un FILTER, ni MAP. Es por esto que se incorporo: Array.from(nodelist);
 Transforma un NodeList en un array.
 
 

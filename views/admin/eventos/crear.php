@@ -19,6 +19,7 @@
 
 <?php
 $script = "<script src= '/build/js/evento.js'></script>";
+$script .= "<script src= '/build/js/ponente.js'></script>";
 
 echo $script;
 
