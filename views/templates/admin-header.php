@@ -1,6 +1,6 @@
 <header class="dashboard__header">
     <div class="dashboard__header-grid">
-        <a href="/"><h2 class="dashboard__logo--white" >&#60; ARGDevCamp/></h2></a>
+        <a href="/"><h2 class="dashboard__logo dashboard__logo--white" >&#60; ARGDevCamp/></h2></a>
 
         <nav class="dashboard__nav">
             <form action="/logout" method="POST" class="dashboard__form">

@@ -22,7 +22,7 @@ class PonentesController
 
         $total = Ponente::total();
 
-        $registros_por_pagina = 5;
+        $registros_por_pagina = 3;
     
 
         $paginacion = new Paginacion($pagina_actual,$registros_por_pagina,$total);

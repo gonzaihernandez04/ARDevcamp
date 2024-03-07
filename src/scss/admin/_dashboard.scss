@@ -23,7 +23,7 @@
         }
     }
     &__logo{
-        @include m.textoFluido(1.3rem,4rem);
+        @include m.textoFluido(1rem,4rem);
     }
     &__form{
         display: flex;
@@ -41,11 +41,25 @@
     &__grid{
         display: flex;
         flex: 1;
-        overflow-y: hidden;
+   
+        overflow-y: scroll;
+        @include m.grid(1,1rem);
+        @include m.telefono{
+           display: grid;
+           grid-template-columns: .2fr 2fr;
+           place-content: center;
+           overflow-y: hidden;
+     
+        }
     }
     &__sidebar{
         background-color: lighten(v.$grisOscuro,10);
-        width: 12rem;
+        width: 100%;
+        @include m.tablet{
+            width: 12rem;
+        }
+        
+        
     }
 
     &__enlace{
@@ -71,9 +85,14 @@
     &__menu{
         padding: 1rem;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 2rem;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include m.tablet{
+            flex-direction: column;
+        }
     
     }
 
@@ -87,11 +106,12 @@
         font-size: 2rem;
     }
     &__contenido{
-        overflow-y: scroll;
         padding: 1rem 1rem 3rem 1rem;
         width: 100%;
-        @include m.tablet{
+
+        @include m.telefono{
             padding: 1rem 5rem 3rem 5rem;
+            overflow-y: scroll;
             
         }
     }

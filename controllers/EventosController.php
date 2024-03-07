@@ -1,7 +1,9 @@
 <?php
 namespace Controllers;
 use Model\Dia;
+use Model\Hora;
 use MVC\Router;
+use Model\Evento;
 use Classes\Email;
 use Model\Usuario;
 use Model\Categoria;
@@ -45,12 +47,27 @@ class EventosController{
         $alertas = [];
         $categorias = Categoria::all('ASC');
         $dias = Dia::all('ASC');
+        $horas = Hora::all('ASC');
+        $evento = new Evento;
+        
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+            $evento->sincronizar($_POST);
+            $alertas = $evento->validar();
+       
+            if(empty($alertas)){
+                $resultado = $evento->guardar();
+                if($resultado) header("Location: /admin/eventos");
+            }
+        }
         
 
         $router->render('admin/eventos/crear',[
             "titulo"=>'Crear evento',
             "categorias"=> $categorias,
-            "dias"=>$dias
+            "alertas"=>$alertas,
+            "dias"=>$dias,
+            "horas"=>$horas,
+            "evento"=>$evento
         ]);
     }
 

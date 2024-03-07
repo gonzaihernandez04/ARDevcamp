@@ -588,6 +588,49 @@ h3 {
   gap: 2rem;
 }
 
+.horas {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .horas {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.horas__hora {
+  color: #007df4;
+  border: 1px solid #007df4;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+.horas__hora:hover {
+  cursor: pointer;
+  background-color: #007df4;
+  color: #FFFFFF;
+}
+.horas__hora--seleccionado {
+  background-color: #007df4;
+  color: #FFFFFF;
+}
+.horas__hora--none {
+  border: 1px solid #64748B;
+  color: #64748B;
+  background-color: #FFFFFF;
+}
+.horas__hora--none:hover {
+  cursor: not-allowed;
+  background-color: #FFFFFF;
+  color: #64748B;
+}
+
 .header {
   padding: 2rem 0;
   min-height: 71rem;
@@ -858,7 +901,7 @@ h3 {
   }
 }
 .dashboard__logo {
-  font-size: clamp(1.3rem, -0.8rem + 10vw, 4rem);
+  font-size: clamp(1rem, -0.8rem + 10vw, 4rem);
 }
 .dashboard__form {
   display: flex;
@@ -876,11 +919,27 @@ h3 {
 .dashboard__grid {
   display: flex;
   flex: 1;
-  overflow-y: hidden;
+  overflow-y: scroll;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 480px) {
+  .dashboard__grid {
+    display: grid;
+    grid-template-columns: 0.2fr 2fr;
+    place-content: center;
+    overflow-y: hidden;
+  }
 }
 .dashboard__sidebar {
   background-color: #2f405d;
-  width: 12rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .dashboard__sidebar {
+    width: 12rem;
+  }
 }
 .dashboard__enlace {
   color: #6f8ab6;
@@ -904,9 +963,16 @@ h3 {
 .dashboard__menu {
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .dashboard__menu {
+    flex-direction: column;
+  }
 }
 .dashboard__menu-texto {
   font-size: 1rem;
@@ -917,13 +983,13 @@ h3 {
   font-size: 2rem;
 }
 .dashboard__contenido {
-  overflow-y: scroll;
   padding: 1rem 1rem 3rem 1rem;
   width: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   .dashboard__contenido {
     padding: 1rem 5rem 3rem 5rem;
+    overflow-y: scroll;
   }
 }
 .dashboard__contenedor-boton {

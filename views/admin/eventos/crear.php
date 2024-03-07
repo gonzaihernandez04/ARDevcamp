@@ -15,3 +15,11 @@
         <input class="formulario__submit formulario__submit--registrar" type="submit" value="Registrar Evento">
     </form>
 </div>
+
+
+<?php
+$script = "<script src= '/build/js/evento.js'></script>";
+
+echo $script;
+
+?>

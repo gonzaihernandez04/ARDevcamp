@@ -39,6 +39,20 @@ Crear cuenta, login, confirmar cuenta, olvide mi contraseña, restablecer contra
 
 Paginacion: La paginacion es un elemento super importante para webs con muchos registros. Alivianan la carga al servidor y permite una experiencia de usuario muy agradable. Este proyecto lo incorpora. Se crearon tanto consultas para la base de datos como funciones especificas y una clase para la Paginacion.
 
+Nuevas funcionalidades y nuevos metodos de ActiveRecord:
+A medida que se avanza en el proyecto, surgen nuevos requerimentos que no satisfacen la necesidad del mismo. Es por eso que se crearon 1 metodo mas:
+1. Llamado whereArray, recibe un array y realiza consultas en base a las keys otorgadas por parte del Controlador.
+Asimismo, esto derivo en un problema, cuando se establece más de un filtro en SQL, se agrega AND entre medio de 2 condiciones. Entonces, al recorrer con un foreach, siendo una query fija como:
+*2 "SELECT * FROM tabla where columna_id = id AND "
+Al recorrerse 2 veces, se agregara un AND al final, quedando asi:
+"SELECT * FROM tabla where columna_id = id AND columna2_id = id2 AND", esto claramente esta mal.
+Por lo que se hizo uso de la funcion de PHP array_key_last($array) y se comprobo si se llego a la ultima posicion del array, no agregue el AND.
+Otra opcion fue SUBSTR(), pero no es muy optima, no por rendimiento, sino que necesita una especificidad de caracteres a eliminar, contando por ejemplo, espacios.
+
+## Nuevas funciones de JS:
+Por necesidad de la logica del codigo y acceso a las variables, se necesito convertir NodeList(elementos en nodo de HTML) a un array. Ahora si bien su estructura es similar, un NODELIST no se puede recorrer con un FILTER, ni MAP, y tampoco foreach. Es por esto que se incorporo: Array.from(nodelist);
+Transforma un NodeList en un array.
+
 
 ### Funciones agregadas:
 LIMITE DE REESTABLECIMIENTO DE Contraseña -> Un usuario puede solicitar 1 vez el restablecimiento de contraseña cada 10 minutos. Para esto se creo una funcion en ActiveRecord llamada checkTimeAwait() al español, chequear tiempo de espera, el cual devuelve si el usuario que quiere solicitar la contraseña, ya esta listo para poder hacerlo. Para esto, se utilizo DateTime en php y las funciones de SQL: DATE_SUB(NOW(), INTERVAL 10 MINUTE) Esto evalua si a paratir del momento en el que se solicito el cambio, ya transcurrieron 10 minutos, en caso de que si, devuelve el resultado
