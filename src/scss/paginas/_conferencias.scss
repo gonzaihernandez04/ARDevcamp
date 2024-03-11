@@ -24,7 +24,12 @@
         #{$modificador}__heading{
             color: v.$secundario;
         }
-        
+        .evento__informacion{
+            background-color: v.$secundario;
+            &:hover{
+                background-color: darken(v.$secundario,10);
+            }
+        }
     }
 
 
@@ -40,11 +45,12 @@
         font-weight: v.$bold;
     }
     &__informacion{
-        min-height: 198px;
+        max-height: 180px;
+        min-height: 180px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 2rem;
         border-radius: 1rem;
         background-color: v.$azul;
@@ -72,7 +78,7 @@
         align-items: center;
     }
     &__imagen-autor{
-        width: 8rem;
+        width: 6rem;
         background-color: v.$blanco;
         border-radius: 50%;
     }
