@@ -24,6 +24,7 @@
         </div>
      
     <?php $script = "<script src='/build/js/pagina-actual.js' defer ></script>"?>
+    <?php $script = "<script src='/build/js/bundle.min.js' defer ></script>"?>
 
     <?php echo $script ?? ''?>
 </body>

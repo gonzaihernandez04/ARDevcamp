@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"app.js","sourcesContent":[]}
+{"version":3,"sources":["app.js"],"names":[],"mappings":"MAEO","file":"app.js","sourcesContent":["\r\n\r\nimport './slider.js'\r\n"]}

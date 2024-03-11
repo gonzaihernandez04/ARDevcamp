@@ -27,6 +27,12 @@ img {
     background-color: v.$blanco;
 }
 
+[class$="--admin"]{
+        width: 100%;
+      transition: none;
+      border: 1px solid v.$grisBlanco;
+    
+}
 
 
 

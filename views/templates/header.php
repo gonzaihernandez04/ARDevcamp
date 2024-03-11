@@ -2,7 +2,9 @@
     <div class="header__contenedor">
         <nav class="header__nav">
             <a href="/registro" class="header__enlace text-center">Registro</a>
-            <a href="/login" class="header__enlace text-center">Iniciar sesion</a>
+            <a href="<?php echo isAuth() ? '/logout' : '/login'?>" class="header__enlace text-center">
+                <?php echo !empty($_SESSION) ? 'Cerrar Sesion' : 'Iniciar Sesion'?>
+            </a>
         </nav>
 
         <div class="header__contenido">
@@ -33,11 +35,12 @@
         <a href="/">
           <h2 class="barra__logo--white">&#60; ArgDevCamp/></h2>
         </a>
+
         <div class="navegacion">
-            <a href="/argdevcamp" class="navegacion__enlace">Evento</a>
-            <a href="/paquetes" class="navegacion__enlace">Paquetes</a>
-            <a href="/workshops-conferencias" class="navegacion__enlace">Workshops - Conferencias</a>
-            <a href="/registro" class="navegacion__enlace"> Comprar Pase</a>
+            <a href="/" class="navegacion__enlace <?php echo $_SERVER['REQUEST_URI'] == "/" ? 'navegacion__enlace--actual' : '';?>">Evento</a>
+            <a href="/paquetes" class="navegacion__enlace <?php echo $_SERVER['REQUEST_URI'] == "/paquetes" ? 'navegacion__enlace--actual' : '';?>">Paquetes</a>
+            <a href="/conferencias-workshops" class="navegacion__enlace <?php echo $_SERVER['REQUEST_URI'] == "/conferencias-workshops" ? 'navegacion__enlace--actual' : '';?>">Workshops - Conferencias</a>
+            <a href="/registro" class="navegacion__enlace <?php echo $_SERVER['REQUEST_URI'] == "/registro" ? 'navegacion__enlace--actual' : '';?>"> Comprar Pase</a>
         </div>
     </div>
 </div>

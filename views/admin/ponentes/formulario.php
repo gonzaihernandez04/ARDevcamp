@@ -4,24 +4,24 @@
     <legend class="formulario__legend">Informacion Personal</legend>
     <div class="formulario__campo">
         <label class="formulario__label" for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" class="formulario__input" placeholder="Nombre ponente" value="<?php echo $ponente->nombre ?? ''; ?>">
+        <input type="text" name="nombre" id="nombre" class="formulario__input formulario__input--admin" placeholder="Nombre ponente" value="<?php echo $ponente->nombre ?? ''; ?>">
     </div>
 
     <div class="formulario__campo">
         <label class="formulario__label" for="apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido" class="formulario__input " placeholder="apellido ponente" value="<?php echo $ponente->apellido ?? ''; ?>">
+        <input type="text" name="apellido" id="apellido" class="formulario__input formulario__input--admin " placeholder="apellido ponente" value="<?php echo $ponente->apellido ?? ''; ?>">
     </div>
 
 
     <div class="formulario__campo">
         <label class="formulario__label" for="ciudad">Ciudad</label>
-        <input type="text" name="ciudad" id="ciudad" class="formulario__input " placeholder="Ciudad ponente" value="<?php echo $ponente->ciudad ?? ''; ?>">
+        <input type="text" name="ciudad" id="ciudad" class="formulario__input formulario__input--admin" placeholder="Ciudad ponente" value="<?php echo $ponente->ciudad ?? ''; ?>">
     </div>
 
 
     <div class="formulario__campo">
         <label class="formulario__label" for="pais">Pais</label>
-        <input type="text" name="pais" id="pais" class="formulario__input " placeholder="Pais ponente" value="<?php echo $ponente->pais ?? ''; ?>">
+        <input type="text" name="pais" id="pais" class="formulario__input formulario__input--admin" placeholder="Pais ponente" value="<?php echo $ponente->pais ?? ''; ?>">
     </div>
 
 
@@ -48,7 +48,7 @@
     <legend class="formulario__legend">Informacion Extra</legend>
     <div class="formulario__campo">
         <label class="formulario__label" for="tags-input">Areas de experiencia (Separadas por coma,)</label>
-        <input type="text" id="tags-input" class="formulario__input " placeholder="Ej: NodeJS, PHP, CSS, Laravel, UX, UI">
+        <input type="text" id="tags-input" class="formulario__input  formulario__input--admin" placeholder="Ej: NodeJS, PHP, CSS, Laravel, UX, UI">
     </div>
 
     <div class="formulario__listado" id="tags">

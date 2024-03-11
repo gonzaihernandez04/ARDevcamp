@@ -1,0 +1,1 @@
+<h2 class="nombre-pagina auth__heading text-center"><?php include_once __DIR__ . '/../templates/nombre-pagina.php';?></h2>

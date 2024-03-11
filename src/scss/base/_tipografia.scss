@@ -38,5 +38,8 @@ h3 {
 [class$="--white"]{
     color: v.$blanco;
 }
+[class$="__descripcion"]{
+    @include m.descripcion-pagina;
+}
 
 
