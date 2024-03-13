@@ -43,12 +43,15 @@ class PaginasController{
         $workshops = Evento::total('categoria_id',2);
       
 
+        $ponentesAll = Ponente::all();
+
         $router->render("paginas/index",[
             "titulo"=> "Inicio ARGDevCamp",
             "eventos"=>$eventos_formateados,
             "ponentes"=>$ponentes,
             "conferencias"=>$conferencias,
             "workshops"=>$workshops,
+            "ponentesAll"=>$ponentesAll
         ]);
     }
 
