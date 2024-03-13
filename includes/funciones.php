@@ -12,11 +12,11 @@ function s($html) : string {
 }
 
 function isAuth(){
-   if(empty($_SESSION)) session_start();
+   if(!isset($_SESSION)) session_start();
     return isset($_SESSION['nombre']) && !empty($_SESSION);
 }
 
 function isAdmin(){
     if(empty($_SESSION))session_start();
-    return $_SESSION['admin'] && !empty($_SESSION['admin']);
+    return !empty($_SESSION['admin']) && $_SESSION['admin'];
 }

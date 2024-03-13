@@ -1,1 +1,27 @@
-<h2 class="nombre-pagina auth__heading text-center"><?php include_once __DIR__ . '/../templates/nombre-pagina.php';?></h2>
+<?php 
+    include_once __DIR__ . '/conferencias-workshops.php';
+?>
+
+<section class="resumen">
+    <div class="resumen__grid">
+        <div class="resumen__bloque">
+            <p class="resumen__texto--numero"><?php echo $ponentes?></p>
+            <p class="resumen__texto resumen__texto">Speakers</p>
+        </div>
+
+        <div class="resumen__bloque">
+            <p class="resumen__texto--numero"><?php echo $conferencias; ?></p>
+            <p class="resumen__texto resumen__texto">Conferencias</p>
+        </div>
+
+        <div class="resumen__bloque">
+            <p class="resumen__texto--numero"><?php echo $workshops?></p>
+            <p class="resumen__texto resumen__texto">Workshops</p>
+        </div>
+
+        <div class="resumen__bloque">
+            <p class="resumen__texto--numero">500</p>
+            <p class="resumen__texto resumen__texto">Asistentes</p>
+        </div>
+    </div>
+</section>

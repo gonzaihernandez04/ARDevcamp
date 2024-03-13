@@ -81,8 +81,9 @@ $router->get("/api/ponentes",[ApiPonentesController::class,"index"]);
 
 
 // Usuario Routing
-
 $router->get('/',[PaginasController::class,'index']);
+
+$router->get('/eventos',[PaginasController::class,'eventos']);
 $router->get('/paquetes',[PaginasController::class,'paquetes']);
 $router->get('/conferencias-workshops',[PaginasController::class,'conferencias']);
 
