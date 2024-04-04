@@ -3,7 +3,7 @@
     <p class="argdevcamp__descripcion">Conoce la conferencia mas importante de Argentina</p>
 
     <div class="argdevcamp__grid">
-        <div class="argdevcamp__imagen">
+        <div class="argdevcamp__imagen" <?php aos_animacion()?> >
             <picture>
                 <source srcset="build/img/sobre_devwebcamp.avif" type="image/avif">
                 <source srcset="build/img/sobre_devwebcamp.webp" type="image/webp">
@@ -11,9 +11,9 @@
             </picture>
         </div>
 
-        <div class="argdevcamp__contenido">
-            <p class="argdevcamp__texto">ARGDevCamp, es la mejor conferencia para desarrolladores que se lleva a cabo en la Argentina. Este año disfruta del contenido mas relevante actualmente junto a tus programadores favoritos. Crea tu cuenta, logueate y comenza a adquirir tus entradas y regalos! </p>
-            <p class="argdevcamp__texto">Echale un vistazo a todo lo que tenemos.
+        <div class="argdevcamp__contenido" >
+            <p class="argdevcamp__texto" <?php aos_animacion()?> >ARGDevCamp, es la mejor conferencia para desarrolladores que se lleva a cabo en la Argentina. Este año disfruta del contenido mas relevante actualmente junto a tus programadores favoritos. Crea tu cuenta, logueate y comenza a adquirir tus entradas y regalos! </p>
+            <p class="argdevcamp__texto"<?php aos_animacion()?> >Echale un vistazo a todo lo que tenemos.
                 Si tenes alguna duda, envia tu consulta al formulario que se encuentra en la seccion de contactos. Dirigite al pie de pagina y encontralo. </p>
         </div>
     </div>

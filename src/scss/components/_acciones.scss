@@ -24,6 +24,9 @@
         margin: 0 auto;
         justify-content: center;
     }
+    &--center{
+        text-align: center
+    }
     &__mensaje{
         @include m.botonBorde(v.$morado,v.$morado,v.$grisOscuro);
            width: fit-content;

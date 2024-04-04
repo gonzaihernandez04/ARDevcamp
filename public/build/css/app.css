@@ -418,6 +418,9 @@ h3 {
   margin: 0 auto;
   justify-content: center;
 }
+.acciones--center {
+  text-align: center;
+}
 .acciones__mensaje {
   color: #1E293B;
   padding: 1.3rem 2rem;
@@ -547,6 +550,11 @@ h3 {
 .evento__informacion:hover {
   background-color: #0063c1;
 }
+.evento__informacion--conferencias {
+  justify-content: space-between;
+  min-height: 200px;
+  max-height: 200;
+}
 .evento__nombre {
   font-size: 2rem;
   margin: 0;
@@ -554,6 +562,9 @@ h3 {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+.evento__nombre--conferencias {
+  margin-bottom: 1rem;
 }
 .evento__autor-info {
   display: flex;
@@ -576,6 +587,9 @@ h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.evento__introduccion--conferencias {
+  margin: 0;
+}
 
 .paquetes__grid {
   width: min(95%, 125rem);
@@ -595,6 +609,24 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
   }
+}
+.paquetes__submit {
+  margin-top: 3rem;
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+.paquetes__submit:hover {
+  background-color: #0063c1;
+  cursor: pointer;
 }
 
 .paquete {
@@ -712,6 +744,7 @@ h3 {
   border-width: 2px;
   border-style: solid;
   padding: 3rem;
+  min-width: 350px;
   background-position: center top;
   background-size: 350px;
   background-repeat: no-repeat;
@@ -721,6 +754,14 @@ h3 {
   font-size: 2.6rem;
   margin: 2rem 0;
 }
+@media (min-width: 768px) {
+  .speaker {
+    min-width: unset;
+  }
+}
+.speaker:nth-child(4n+0) {
+  background-image: -webkit-image-set(url("../img/bg_0.avif") 1x, url("../img/bg_0.webp") 1x, url("../img/bg_0.png") 1x);
+}
 .speaker:nth-child(4n+1) {
   background-image: -webkit-image-set(url("../img/bg_1.avif") 1x, url("../img/bg_1.webp") 1x, url("../img/bg_1.png") 1x);
 }
@@ -729,9 +770,6 @@ h3 {
 }
 .speaker:nth-child(4n+3) {
   background-image: -webkit-image-set(url("../img/bg_3.avif") 1x, url("../img/bg_3.webp") 1x, url("../img/bg_3.png") 1x);
-}
-.speaker:nth-child(4n+4) {
-  background-image: -webkit-image-set(url("../img/bg_4.avif") 1x, url("../img/bg_4.webp") 1x, url("../img/bg_4.png") 1x);
 }
 .speaker__imagen {
   min-width: 350px;
@@ -805,6 +843,187 @@ h3 {
 }
 .speakers-sociales__ocultar {
   display: none;
+}
+
+.mapa {
+  height: 55rem;
+  margin-top: 5rem;
+}
+.mapa__heading {
+  margin: 0;
+  text-align: left;
+  font-size: 2.5rem;
+}
+.mapa__texto {
+  font-size: 1.5rem;
+}
+
+.boletos {
+  width: min(95%, 80rem);
+  padding: 5rem 2rem;
+  margin: 4rem auto 0 auto;
+  -webkit-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  -moz-box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  box-shadow: 0px 0px 20px 0px rgb(221, 221, 221);
+  box-shadow: none;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.boleto {
+  position: relative;
+  color: #FFFFFF;
+  width: min(100% - 5rem, 65rem);
+  margin: 4rem auto;
+  padding: 5rem;
+  border-radius: 2rem;
+}
+.boleto::before {
+  clip-path: circle(50% at 25% 50%);
+  left: 0;
+}
+.boleto::after {
+  clip-path: circle(50% at 75%);
+  right: 0;
+}
+.boleto::before, .boleto::after {
+  position: absolute;
+  content: "";
+  background-color: #FFFFFF;
+  width: 5rem;
+  height: 5rem;
+  top: calc(50% - 2.5rem);
+}
+.boleto--presencial {
+  background-color: #99c2ff;
+  background-image: radial-gradient(at 77% 27%, hsl(224, 90%, 76%) 0px, transparent 50%), radial-gradient(at 79% 26%, hsl(297, 72%, 79%) 0px, transparent 50%), radial-gradient(at 50% 49%, hsl(173, 67%, 60%) 0px, transparent 50%), radial-gradient(at 74% 36%, hsl(343, 67%, 66%) 0px, transparent 50%), radial-gradient(at 73% 60%, hsl(198, 76%, 78%) 0px, transparent 50%), radial-gradient(at 18% 74%, hsl(170, 93%, 77%) 0px, transparent 50%), radial-gradient(at 24% 60%, hsl(208, 94%, 60%) 0px, transparent 50%);
+}
+.boleto--virtual {
+  background-color: #00c8c2;
+}
+.boleto--gratis {
+  background-color: #007df4;
+}
+.boleto__logo {
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
+}
+@media (min-width: 1024px) {
+  .boleto__logo {
+    margin-bottom: 0;
+    margin: 0;
+  }
+}
+.boleto__plan {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 3rem 0 0 0;
+}
+.boleto__precio {
+  font-size: 4rem;
+  font-weight: 900;
+}
+.boleto__enlace-contenedor {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+.boleto__enlace {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  width: auto;
+}
+.boleto__enlace:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
+.boleto--acceso {
+  width: 30rem;
+  height: 50rem;
+  padding: 10rem 3rem;
+}
+@media (min-width: 768px) {
+  .boleto--acceso {
+    width: 60rem;
+    height: 30rem;
+    padding: 6rem 5rem;
+  }
+}
+.boleto--acceso .boleto__contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.boleto--acceso .boleto__logo {
+  font-size: clamp(2rem, -0.8rem + 10vw, 3rem);
+  margin: 0;
+  text-align: left;
+}
+.boleto--acceso .boleto__nombre {
+  font-size: clamp(1.5rem, -0.8rem + 10vw, 2.4rem);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.boleto--acceso .boleto__codigo {
+  font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  bottom: 7rem;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .boleto--acceso .boleto__codigo {
+    width: 30rem;
+    transform: rotate(90deg);
+    position: absolute;
+    transform-origin: 0 0;
+    top: 0;
+    left: calc(100% - 5rem);
+  }
+}
+.boleto::before {
+  clip-path: circle(50% at 50% 25%);
+  left: calc(50% - 2.5rem);
+  top: 0;
+}
+@media (min-width: 768px) {
+  .boleto::before {
+    clip-path: circle(50% at 25% 50%);
+    left: 0;
+    top: calc(50% - 2.5rem);
+  }
+}
+.boleto::after {
+  clip-path: circle(50% at 50% 85%);
+  left: calc(50% - 2.5rem);
+  top: calc(100% - 5rem);
+}
+@media (min-width: 768px) {
+  .boleto::after {
+    clip-path: circle(50% at 75% 50%);
+    left: calc(100% - 5rem);
+    top: calc(50% - 2.5rem);
+  }
+}
+
+.pagina_404__contenedor {
+  text-align: center;
+}
+.pagina_404__enlace {
+  color: #007df4;
 }
 
 .formulario {
@@ -1045,6 +1264,9 @@ h3 {
 .header__enlace:first-child {
   margin-right: 1rem;
 }
+.header__enlace:nth-child(2) {
+  margin-right: 1rem;
+}
 .header__logo {
   text-align: center;
   padding: 12rem 0;
@@ -1145,6 +1367,7 @@ h3 {
 
 .barra {
   background-color: #007df4;
+  padding: 0.5rem 0;
 }
 .barra__contenido {
   padding: 5rem 2rem;
@@ -1164,6 +1387,10 @@ h3 {
     align-items: center;
   }
 }
+.barra__logo {
+  font-size: 0rem;
+  font-size: clamp(2rem, -0.8rem + 10vw, 4rem);
+}
 
 .navegacion {
   display: flex;
@@ -1179,7 +1406,7 @@ h3 {
 .navegacion__enlace {
   font-weight: 700;
   color: #FFFFFF;
-  font-size: 2rem;
+  font-size: clamp(1rem, -0.8rem + 10vw, 2rem);
   padding: 2rem;
   text-align: center;
 }
@@ -1197,11 +1424,13 @@ h3 {
   background-color: rgb(218, 73, 177);
   color: #FFFFFF;
 }
-.footer__contenido {
+.footer__grid {
   padding: 5rem 2rem;
   max-width: 90%;
   width: 100%;
   margin: 0 auto;
+}
+.footer__contenido {
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -1562,5 +1791,47 @@ h3 {
 .listado-ponentes__ponente--seleccionado {
   background-color: #007df4;
   color: #FFFFFF;
+}
+
+.eventos-registro {
+  padding: 5rem 2rem;
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: none;
+}
+@media (min-width: 768px) {
+  .eventos-registro {
+    display: flex;
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .eventos-registro__listado {
+    flex: 0 0 60%;
+  }
+}
+.eventos-registro__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .eventos-registro__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.eventos-registro__heading--conferencias {
+  color: #007df4;
+  white-space: nowrap;
+  font-size: clamp(2rem, -0.8rem + 10vw, 6rem);
+}
+
+@media (min-width: 768px) {
+  .registro {
+    flex: 0 0 40%;
+  }
 }
 /*# sourceMappingURL=app.css.map */

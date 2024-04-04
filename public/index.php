@@ -5,13 +5,14 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\EventosController;
+use Controllers\PaginasController;
 use Controllers\RegalosController;
 use Controllers\PonentesController;
+use Controllers\RegistroController;
 use Controllers\DashboardController;
 use Controllers\ApiEventosController;
 use Controllers\ApiPonentesController;
 use Controllers\RegistradosController;
-use Controllers\PaginasController;
 
 $router = new Router();
 
@@ -79,6 +80,19 @@ $router->get('/api/eventos-horario',[ApiEventosController::class,'index']);
 $router->get("/api/ponentes",[ApiPonentesController::class,"index"]);
 
 
+// Registro de usuarios
+
+$router->get('/finalizar-registro',[RegistroController::class,"crear"]);
+$router->post('/finalizar-registro/gratis',[RegistroController::class,"gratis"]);
+$router->post('/finalizar-registro/pagar',[RegistroController::class,"pagar"]);
+$router->get('/finalizar-registro/conferencias',[RegistroController::class,"conferencias"]);
+
+
+// Boleto virtual
+
+$router->get('/boleto',[RegistroController::class,'boleto']);
+
+
 
 // Usuario Routing
 $router->get('/',[PaginasController::class,'index']);
@@ -86,6 +100,14 @@ $router->get('/',[PaginasController::class,'index']);
 $router->get('/eventos',[PaginasController::class,'eventos']);
 $router->get('/paquetes',[PaginasController::class,'paquetes']);
 $router->get('/conferencias-workshops',[PaginasController::class,'conferencias']);
+
+
+
+
+
+// 404
+
+$router->get("/404",[PaginasController::class, "error"]);
 
 
 

@@ -19,11 +19,15 @@
 
 .speaker{
     @include m.card;
+    min-width: 350px;
+    @include m.tablet{
+        min-width: unset;
+    }
     background-position: center top;
     background-size: 350px;
     background-repeat: no-repeat;
 
-    @for $i from 1 through 4{
+    @for $i from 0 to 4{
         &:nth-child(4n + #{$i}){
             background-image: -webkit-image-set(
                 url('../img/bg_#{$i}.avif') 1x,

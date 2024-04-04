@@ -3,6 +3,7 @@
 
 .barra{
     background-color: v.$azul;
+    padding: .5rem 0;
     &__contenido{
      
         @include m.contenedor-lg;
@@ -17,6 +18,11 @@
             justify-content: space-between;
             align-items: center
         }
+      
+    }
+    &__logo{
+        font-size: 0rem;
+        @include m.textoFluido(2rem,4rem);
     }
     
 }

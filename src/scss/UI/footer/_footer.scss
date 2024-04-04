@@ -4,8 +4,11 @@
     margin-top: 5rem;
     background-color: v.$morado;
     color: v.$blanco;
-    &__contenido{
+    &__grid{
         @include m.contenedor-lg;
+    }
+    &__contenido{
+       
         text-align: center;
         @include m.tablet{
             text-align: left

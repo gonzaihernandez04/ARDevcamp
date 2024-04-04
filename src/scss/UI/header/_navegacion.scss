@@ -13,7 +13,7 @@
     &__enlace{
         font-weight: v.$bold;
         color: v.$blanco;
-        font-size: 2rem;
+        @include m.textoFluido(1rem,2rem);
         padding: 2rem;
         text-align: center;
         &:hover{

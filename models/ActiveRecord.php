@@ -136,6 +136,8 @@ class ActiveRecord {
 
     // crea un nuevo registro
     public function crear() {
+     
+
         // Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
         // Insertar en la base de datos
@@ -144,7 +146,6 @@ class ActiveRecord {
         $query .= " ) VALUES (' "; 
         $query .= join("', '", array_values($atributos));
         $query .= " ') ";
-    
         // Resultado de la consulta
         $resultado = self::$db->query($query);
 

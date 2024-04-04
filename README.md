@@ -32,6 +32,8 @@ Renderizacion del texto: CSS tiene una funcion llamada text-rendering, la cual d
 
 Reutilizacion de estilos: En este proyecto se aprovecho el uso excesivo de MIXINS, que permite una gran reutilizacion de codigo.
 
+## Pagos en linea.
+ArgDevCamp permite realizar pagos en linea a traves de PayPal o tarjetas. Se implementa  la API REST de PayPal. Se utilizaron credenciales otorgadas y el sandbox por la empresa para garantizar el buen funcionamiento del envio de dinero. Que es el sandbox? El sandbox es un estado de la aplicacion, la cual significa un modo de prueba.
 
 ## Funciones de la web
 Crear cuenta, login, confirmar cuenta, olvide mi contraseña, restablecer contraseña.
@@ -56,3 +58,5 @@ Transforma un NodeList en un array.
 
 ### Funciones agregadas:
 LIMITE DE REESTABLECIMIENTO DE Contraseña -> Un usuario puede solicitar 1 vez el restablecimiento de contraseña cada 10 minutos. Para esto se creo una funcion en ActiveRecord llamada checkTimeAwait() al español, chequear tiempo de espera, el cual devuelve si el usuario que quiere solicitar la contraseña, ya esta listo para poder hacerlo. Para esto, se utilizo DateTime en php y las funciones de SQL: DATE_SUB(NOW(), INTERVAL 10 MINUTE) Esto evalua si a paratir del momento en el que se solicito el cambio, ya transcurrieron 10 minutos, en caso de que si, devuelve el resultado
+
+
