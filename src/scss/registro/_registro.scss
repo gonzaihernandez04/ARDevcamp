@@ -8,6 +8,7 @@
     @include m.tablet{
         display: flex;
         gap: 2rem;
+        align-items: flex-start;
     }
 
     &__listado{
@@ -24,17 +25,97 @@
     }
 
     &__heading{
+
+        &--conferencias,
+        &--workshops{
+            white-space: nowrap;
+            @include m.textoFluido(2rem,6rem);
+        }
         &--conferencias{
             color: v.$azul;
-            white-space: nowrap;
-            @include m.textoFluido(2rem,6rem)
+         
+        }
+        &--workshops{
+            margin: 0;
+            margin-top: 5rem;
+            color: v.$secundario;
+         
+        }
+    }
+
+    &__fecha{
+        margin: 6rem 0 3rem 0;
+        &--registro{
+            font-size: 2.1rem;
+            font-weight: v.$bold;
+            color: v.$grisOscuro;
         }
     }
 
  
 }
 .registro{
-    @include m.tablet{
-        flex: 0 0 40%;
+    background-color: v.$grisClaro;
+    padding: 3rem;
+    border-radius: 1rem;
+    &--aside{
+        @include m.tablet{
+            flex: 0 0 40%;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 3rem;
+            
+        }
     }
+    &__heading{
+        margin: 0 0 3rem 0;
+    }
+
+    &__evento{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:nth-child(even){
+            background-color: darken(v.$grisClaro,3%);
+        }
+
+    }
+    &__nombre{
+        font-size: 1.6rem;
+        font-weight: v.$bold;
+        padding: 0 1rem;
+    }
+
+    &__eliminar{
+        all: unset;
+        color: v.$rojo;
+        &:hover{
+            cursor: pointer;
+        }
+        padding: 0 2rem;
+    }
+
+    &__texto{
+        text-align: center;
+    }
+    &__regalo{
+        margin-top: 3rem;
+    }
+    &__label{
+        display: block;
+        font-size: 2.2rem;
+        font-weight: v.$bold;
+        margin-bottom: 1rem;
+    }
+    &__select{
+        width: 100%;
+        background-color: v.$blanco;
+        border: 1px solid v.$gris;
+        padding: 1rem;
+        border-radius: .5rem;
+        text-align: center;
+    }
+
+     
+
 }

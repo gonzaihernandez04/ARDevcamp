@@ -54,7 +54,7 @@
 
         <div id="smart-button-container">
           <div style="text-align: center;">
-            <div id="paypal-button-container"></div>
+            <div id="paypal-button-container2"></div>
           </div>
         </div>
 
@@ -74,7 +74,7 @@
 <script src="https://www.paypal.com/sdk/js?client-id=AXrou61vp5FmGBGsz48Uiilryn11atHXvWxRGKZRrBJS-QG4qD-V2ucPIYASyBB1D2z3Aiq5oO2AynH3&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 
 <script>
-    function initPayPalButton() {
+    function initPayPalButton(button = '',price = 199,id = 1) {
       paypal.Buttons({
         style: {
           shape: 'rect',
@@ -85,7 +85,7 @@
  
         createOrder: function(data, actions) {
           return actions.order.create({
-            purchase_units: [{"description":"1","amount":{"currency_code":"USD","value":199}}]
+            purchase_units: [{"description":id,"amount":{"currency_code":"USD","value":price}}]
           });
         },
  
@@ -96,7 +96,7 @@
             // console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
  
             // Show a success message within this page, e.g.
-            const element = document.getElementById('paypal-button-container');
+            const element = document.getElementById(`paypal-button-container${button}`);
             element.innerHTML = '';
             element.innerHTML = '<h3>Thank you for your payment!</h3>';
  
@@ -114,7 +114,7 @@
             .then(resultado => {
               if(resultado.resultado){
                 // Window.location.origin extrae nuestro dominio
-                const url = window.location.origin + '/finalizar-registro/conferencias';
+               const url = window.location.origin + '/finalizar-registro/conferencias';
                 window.location.href = url;
               }
             })
@@ -125,10 +125,11 @@
         onError: function(err) {
           console.log(err);
         }
-      }).render('#paypal-button-container');
+      }).render(`#paypal-button-container${button}`);
     }
  
   initPayPalButton();
+  initPayPalButton(2,49,2);
 </script>
 
 <!-- <script>

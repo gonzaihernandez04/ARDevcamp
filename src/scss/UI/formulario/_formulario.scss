@@ -134,4 +134,19 @@
            }
        }
     }
+    $modificador:&;
+    &--registro{
+        margin: 2rem 0;
+        width: 100%;
+        #{$modificador}__campo{
+            margin: 0;
+         
+        }
+        #{$modificador}__submit{
+            margin: 0;
+            &--full{
+                width: 100%;
+            }
+        }
+    }
 }

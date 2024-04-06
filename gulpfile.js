@@ -47,8 +47,11 @@ function javascript() {
         },
         mode:'production',
         watch:true,
-        entry: './src/js/app.js'
-      }))
+        entry: {
+            app: './src/js/app.js',
+            registro:'./src/js/registro.js'
+      }
+    }))
       .pipe(sourcemaps.init())
       .pipe(terser())
       .pipe(sourcemaps.write('.'))

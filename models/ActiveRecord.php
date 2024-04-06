@@ -127,6 +127,28 @@ class ActiveRecord {
         return $resultado;
     }
 
+    public static function multipleWhere($tablas = [],$condicion = ""){
+        $tablasString = self::getTablas($tablas);
+        $query = "SELECT COUNT(*) FROM " .$tablasString . " WHERE " . $condicion;
+      
+
+    }
+
+    public static function getTablas($tablas){
+        $cadena = '';
+        foreach ($tablas as $key =>$value){
+            if($key != array_key_last($tablas)){
+                $cadena .= "{$key} as {$value}, ";
+            }else{
+                $cadena .= "{$key} as {$value}";
+            }
+        }
+        
+        return $cadena;
+    }
+
+  
+ 
     // SQL para Consultas Avanzadas.
     public static function SQL($consulta) {
         $query = $consulta;
@@ -148,7 +170,6 @@ class ActiveRecord {
         $query .= " ') ";
         // Resultado de la consulta
         $resultado = self::$db->query($query);
-
 
         return [
            'resultado' =>  $resultado,
