@@ -27,7 +27,7 @@ class RegistroController
             header('Location: /boleto?id=' . urlencode($registro->token));
         
       
-          } else if(isset($registro->regalo_id) && ($registro->regalo_id == "1" || ($registro->paquete_id == "1" || $registro->paquete_id=="2")))  {
+          } else if(isset($registro->regalo_id) && ($registro->regalo_id == "1" || ($registro->paquete_id == "1" )))  {
             header('Location: /finalizar-registro/conferencias');       
            }
 
@@ -159,15 +159,17 @@ class RegistroController
         if (!isset($registro->paquete_id)) {
             header("Location: /login");
         }
-        if($registro->paquete_id == "3" && $registro->regalo_id =="1"){
+        // Si el paquete es gratis o el 2 y el regalo == "1"(sin regalo), que me redirija al boleto
+        if(($registro->paquete_id == "3" || $registro->paquete_id=="2") && $registro->regalo_id =="1"){
             header("Location: /boleto?id=". urlencode($registro->token));
         }
-        // SI ya existe un registro con X id en las inscripciones, que lo redirija al boleto
+        // SI ya existe un registro con X id en las inscripciones, que lo redirija al boleto, esto se utiliza para evitar usar al regalo como forma de verifiacion que que se inscribio una persona. Se utiliza para la comprobacion de aquellos que compraron pase presencial. Si no existe ningun evento_registro segun el registro, arrojara null, es decir, no existira, por lo que, no se debe redirigir al boleto. S produce un corto circuito.
 
         if(isset($evento_registro->registro_id) && $evento_registro->registro_id == $registro->id){
             header("Location: /boleto?id=". urlencode($registro->token));
 
         }
+
         $eventos = Evento::ordenar('hora_id', 'ASC');
         $eventos_formateados = [];
 

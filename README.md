@@ -35,6 +35,10 @@ Reutilizacion de estilos: En este proyecto se aprovecho el uso excesivo de MIXIN
 ## Pagos en linea.
 ArgDevCamp permite realizar pagos en linea a traves de PayPal o tarjetas. Se implementa  la API REST de PayPal. Se utilizaron credenciales otorgadas y el sandbox por la empresa para garantizar el buen funcionamiento del envio de dinero. Que es el sandbox? El sandbox es un estado de la aplicacion, la cual significa un modo de prueba.
 
+## Regalos y conferencias
+
+Una vez hecho un pago, el usuario podra elegir hasta 5 conferencias de desarrolladores si asi lo desea. Asimismo, podra elegir un regalo, siempre y cuando su pase sea virtual o presencial
+
 ## Funciones de la web
 Crear cuenta, login, confirmar cuenta, olvide mi contraseña, restablecer contraseña.
 

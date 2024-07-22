@@ -6,7 +6,6 @@ import 'swiper/css/navigation'
 
 document.addEventListener('DOMContentLoaded', function(){
  
-    console.log(document.querySelector('.slider'))
    if(document.querySelector('.slider')){
     const options = {
         slidesPerView: 1,
